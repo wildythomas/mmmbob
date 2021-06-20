@@ -544,7 +544,7 @@ class Character extends FlxSprite
 	
 					addOffset('idle');
 	
-					flipX = true;
+					flipX = false;
 				
 			case 'angrybob':
 				tex = Paths.getSparrowAtlas('bob/angrybob_asset');
