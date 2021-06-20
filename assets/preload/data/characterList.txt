@@ -20,3 +20,4 @@ angrybob
 hellbob
 ron
 glitched-bob
+gloop-bob
