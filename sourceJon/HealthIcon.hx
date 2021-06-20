@@ -42,6 +42,7 @@ class HealthIcon extends FlxSprite
 		animation.add('hellbob', [28, 29], 0, false, isPlayer);
 		animation.add('ron', [30, 31], 0, false, isPlayer);
 		animation.add('glitched-bob', [34, 35], 0, false, isPlayer);
+		animation.add('gloop-bob', [32, 33], 0, false, isPlayer);
 		animation.play(char);
 		scrollFactor.set();
 	}
