@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="WeirdStuff.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Symbol 10000" x="0" y="0" width="605" height="225"/>
+	<SubTexture name="Symbol 10001" x="0" y="0" width="605" height="225"/>
+	<SubTexture name="Symbol 10002" x="605" y="0" width="603" height="224" frameX="-2" frameY="-1" frameWidth="605" frameHeight="225"/>
+	<SubTexture name="Symbol 10003" x="605" y="0" width="603" height="224" frameX="-2" frameY="-1" frameWidth="605" frameHeight="225"/>
+	<SubTexture name="Symbol 20000" x="1208" y="0" width="544" height="187" frameX="-5" frameY="0" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 20001" x="1208" y="0" width="544" height="187" frameX="-5" frameY="0" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 20002" x="0" y="225" width="551" height="62" frameX="0" frameY="-59" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 20003" x="0" y="225" width="551" height="62" frameX="0" frameY="-59" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 20004" x="551" y="225" width="544" height="210" frameX="-2" frameY="-10" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 20005" x="551" y="225" width="544" height="210" frameX="-2" frameY="-10" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 20006" x="1095" y="225" width="553" height="66" frameX="-2" frameY="-64" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 20007" x="1095" y="225" width="553" height="66" frameX="-2" frameY="-64" frameWidth="555" frameHeight="220"/>
+	<SubTexture name="Symbol 30000" x="0" y="435" width="545" height="285" frameX="0" frameY="-1" frameWidth="545" frameHeight="286"/>
+	<SubTexture name="Symbol 30001" x="0" y="435" width="545" height="285" frameX="0" frameY="-1" frameWidth="545" frameHeight="286"/>
+	<SubTexture name="Symbol 30002" x="545" y="435" width="544" height="286" frameX="-1" frameY="0" frameWidth="545" frameHeight="286"/>
+	<SubTexture name="Symbol 30003" x="545" y="435" width="544" height="286" frameX="-1" frameY="0" frameWidth="545" frameHeight="286"/>
+	<SubTexture name="Symbol 40000" x="1089" y="435" width="387" height="279" frameX="0" frameY="-21" frameWidth="387" frameHeight="339"/>
+	<SubTexture name="Symbol 40001" x="1089" y="435" width="387" height="279" frameX="0" frameY="-21" frameWidth="387" frameHeight="339"/>
+	<SubTexture name="Symbol 40002" x="1476" y="435" width="367" height="338" frameX="-12" frameY="-1" frameWidth="387" frameHeight="339"/>
+	<SubTexture name="Symbol 40003" x="1476" y="435" width="367" height="338" frameX="-12" frameY="-1" frameWidth="387" frameHeight="339"/>
+	<SubTexture name="Symbol 40004" x="0" y="773" width="341" height="318" frameX="-8" frameY="0" frameWidth="387" frameHeight="339"/>
+	<SubTexture name="Symbol 40005" x="0" y="773" width="341" height="318" frameX="-8" frameY="0" frameWidth="387" frameHeight="339"/>
+	<SubTexture name="Symbol 50000" x="341" y="773" width="380" height="176" frameX="-53" frameY="-7" frameWidth="433" frameHeight="224"/>
+	<SubTexture name="Symbol 50001" x="341" y="773" width="380" height="176" frameX="-53" frameY="-7" frameWidth="433" frameHeight="224"/>
+	<SubTexture name="Symbol 50002" x="721" y="773" width="407" height="205" frameX="-26" frameY="-8" frameWidth="433" frameHeight="224"/>
+	<SubTexture name="Symbol 50003" x="721" y="773" width="407" height="205" frameX="-26" frameY="-8" frameWidth="433" frameHeight="224"/>
+	<SubTexture name="Symbol 50004" x="1128" y="773" width="431" height="224" frameX="0" frameY="0" frameWidth="433" frameHeight="224"/>
+	<SubTexture name="Symbol 50005" x="1128" y="773" width="431" height="224" frameX="0" frameY="0" frameWidth="433" frameHeight="224"/>
+	<SubTexture name="Symbol 60000" x="1559" y="773" width="425" height="206" frameX="-10" frameY="-34" frameWidth="435" frameHeight="261"/>
+	<SubTexture name="Symbol 60001" x="1559" y="773" width="425" height="206" frameX="-10" frameY="-34" frameWidth="435" frameHeight="261"/>
+	<SubTexture name="Symbol 60002" x="0" y="1091" width="402" height="261" frameX="0" frameY="0" frameWidth="435" frameHeight="261"/>
+	<SubTexture name="Symbol 60003" x="0" y="1091" width="402" height="261" frameX="0" frameY="0" frameWidth="435" frameHeight="261"/>
+	<SubTexture name="Symbol 70000" x="402" y="1091" width="667" height="347"/>
+	<SubTexture name="Symbol 70001" x="402" y="1091" width="667" height="347"/>
+	<SubTexture name="Symbol 70002" x="1069" y="1091" width="665" height="347" frameX="-1" frameY="0" frameWidth="667" frameHeight="347"/>
+	<SubTexture name="Symbol 70003" x="1069" y="1091" width="665" height="347" frameX="-1" frameY="0" frameWidth="667" frameHeight="347"/>
+	<SubTexture name="Symbol 80000" x="0" y="1438" width="389" height="159" frameX="0" frameY="-25" frameWidth="475" frameHeight="186"/>
+	<SubTexture name="Symbol 80001" x="0" y="1438" width="389" height="159" frameX="0" frameY="-25" frameWidth="475" frameHeight="186"/>
+	<SubTexture name="Symbol 80002" x="389" y="1438" width="435" height="186" frameX="-40" frameY="0" frameWidth="475" frameHeight="186"/>
+	<SubTexture name="Symbol 80003" x="389" y="1438" width="435" height="186" frameX="-40" frameY="0" frameWidth="475" frameHeight="186"/>
+</TextureAtlas>

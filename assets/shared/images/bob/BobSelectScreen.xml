@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BobSelectScreen.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bob Onslaught0000" x="0" y="0" width="769" height="684" frameX="0" frameY="-84" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0001" x="0" y="0" width="769" height="684" frameX="0" frameY="-84" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0002" x="0" y="0" width="769" height="684" frameX="0" frameY="-84" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0003" x="0" y="0" width="769" height="684" frameX="0" frameY="-84" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0004" x="0" y="0" width="769" height="684" frameX="0" frameY="-84" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0005" x="769" y="0" width="793" height="778" frameX="0" frameY="0" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0006" x="769" y="0" width="793" height="778" frameX="0" frameY="0" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0007" x="769" y="0" width="793" height="778" frameX="0" frameY="0" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0008" x="769" y="0" width="793" height="778" frameX="0" frameY="0" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0009" x="769" y="0" width="793" height="778" frameX="0" frameY="0" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0010" x="0" y="778" width="853" height="712" frameX="0" frameY="-58" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0011" x="0" y="778" width="853" height="712" frameX="0" frameY="-58" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0012" x="0" y="778" width="853" height="712" frameX="0" frameY="-58" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0013" x="0" y="778" width="853" height="712" frameX="0" frameY="-58" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Onslaught0014" x="0" y="778" width="853" height="712" frameX="0" frameY="-58" frameWidth="853" frameHeight="778"/>
+	<SubTexture name="Bob Week0000" x="853" y="778" width="688" height="680" frameX="0" frameY="-9" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0001" x="853" y="778" width="688" height="680" frameX="0" frameY="-9" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0002" x="853" y="778" width="688" height="680" frameX="0" frameY="-9" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0003" x="853" y="778" width="688" height="680" frameX="0" frameY="-9" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0004" x="853" y="778" width="688" height="680" frameX="0" frameY="-9" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0005" x="0" y="1490" width="694" height="726" frameX="-9" frameY="-1" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0006" x="0" y="1490" width="694" height="726" frameX="-9" frameY="-1" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0007" x="0" y="1490" width="694" height="726" frameX="-9" frameY="-1" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0008" x="0" y="1490" width="694" height="726" frameX="-9" frameY="-1" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0009" x="0" y="1490" width="694" height="726" frameX="-9" frameY="-1" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0010" x="694" y="1490" width="687" height="710" frameX="-3" frameY="0" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0011" x="694" y="1490" width="687" height="710" frameX="-3" frameY="0" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0012" x="694" y="1490" width="687" height="710" frameX="-3" frameY="0" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0013" x="694" y="1490" width="687" height="710" frameX="-3" frameY="0" frameWidth="703" frameHeight="727"/>
+	<SubTexture name="Bob Week0014" x="694" y="1490" width="687" height="710" frameX="-3" frameY="0" frameWidth="703" frameHeight="727"/>
+</TextureAtlas>
