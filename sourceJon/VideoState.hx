@@ -32,21 +32,13 @@ class VideoState extends MusicBeatState
 	public var defaultText:String = "";
 	public var doShit:Bool = false;
 	public var pauseText:String = "Press P To Pause/Unpause";
-	public var autoPause:Bool = false;
-	public var musicPaused:Bool = false;
 
-	public function new(source:String, toTrans:FlxState, frameSkipLimit:Int = -1, autopause:Bool = false)
+	public function new(source:String, toTrans:FlxState)
 	{
 		super();
 		
-		autoPause = autopause;
-		
 		leSource = source;
 		transClass = toTrans;
-		if (frameSkipLimit != -1 && GlobalVideo.isWebm)
-		{
-			GlobalVideo.getWebm().webm.SKIP_STEP_LIMIT = frameSkipLimit;	
-		}
 	}
 	
 	override function create()
@@ -68,12 +60,7 @@ class VideoState extends MusicBeatState
 		#end
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
-		var html5Text:String = "You Are Not Using HTML5...\nThe Video Didnt Load!";
-		if (isHTML)
-		{
-			html5Text = "You Are Using HTML5!";
-		}
-		defaultText = "If Your On HTML5\nTap Anything...\nThe Bottom Text Indicates If You\nAre Using HTML5...\n\n" + html5Text;
+
 		txt = new FlxText(0, 0, FlxG.width,
 			defaultText,
 			32);
@@ -121,12 +108,6 @@ class VideoState extends MusicBeatState
 				doShit = true;
 			//}, 1);
 		//}
-		
-		if (autoPause && FlxG.sound.music != null && FlxG.sound.music.playing)
-		{
-			musicPaused = true;
-			FlxG.sound.music.pause();
-		}
 	}
 	
 	override function update(elapsed:Float)
@@ -209,11 +190,6 @@ class VideoState extends MusicBeatState
 			notDone = false;
 			FlxG.sound.music.volume = fuckingVolume;
 			txt.text = pauseText;
-			if (musicPaused)
-			{
-				musicPaused = false;
-				FlxG.sound.music.resume();
-			}
 			FlxG.autoPause = true;
 			FlxG.switchState(transClass);
 		}

@@ -2530,6 +2530,17 @@ class PlayState extends MusicBeatState
 						FlxG.sound.play(Paths.sound('Lights_Shut_off'));
 					}
 
+					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
+					FlxG.sound.music.stop();
+					switch(SONG.song.toLowerCase())
+					{
+						case 'ron':
+							LoadingState.loadAndSwitchState(new VideoState("assets/videos/ronEndCutscene", new PlayState()));
+						default:
+							LoadingState.loadAndSwitchState(new PlayState());
+					}
+			
+
 					FlxTransitionableState.skipNextTransIn = true;
 					FlxTransitionableState.skipNextTransOut = true;
 					prevCamFollow = camFollow;
