@@ -1145,13 +1145,15 @@ class PlayState extends MusicBeatState
 	{
 		camHUD.visible = false;
 		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
-		var RONDIESIHATERON:FlxSprite = new FlxSprite(400, 200);
+		var RONDIESIHATERON:FlxSprite = new FlxSprite(600, 400);
 		RONDIESIHATERON.frames = Paths.getSparrowAtlas('bob/cutscene/IHATERON');
 		RONDIESIHATERON.animation.addByPrefix('idle', 'RonDied', 24,false);
 		RONDIESIHATERON.animation.play('idle');
 		RONDIESIHATERON.scrollFactor.set();
 		RONDIESIHATERON.updateHitbox();
 		RONDIESIHATERON.screenCenter();
+		RONDIESIHATERON.scale.x = 1.25;
+		RONDIESIHATERON.scale.y = 1.25;
 		add(RONDIESIHATERON);
 		FlxG.sound.play(Paths.sound('IHATERON'), 1, false, null, true, function()
 			{
