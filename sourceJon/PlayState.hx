@@ -1113,6 +1113,8 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'withered':
 					schoolIntro(doof);
+				case 'trouble' :
+					ONSLAUGHTIntro();
 				case 'run':
 					schoolIntro(doof);
 				default:
@@ -1139,7 +1141,26 @@ class PlayState extends MusicBeatState
 
 		super.create();
 	}
-
+	function ONSLAUGHTIntro() 
+	{
+		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
+		var RONDIESIHATERON:FlxSprite = new FlxSprite(400, 200);
+		RONDIESIHATERON.frames = Paths.getSparrowAtlas('bob/cutscene/IHATERON');
+		RONDIESIHATERON.animation.addByPrefix('idle', 'RonDied', 24);
+		RONDIESIHATERON.animation.play('idle');
+		RONDIESIHATERON.scrollFactor.set(0.8, 0.9);
+		RONDIESIHATERON.scale.set(6, 6);
+		FlxG.sound.play(Paths.sound('IHATERON'));
+		add(RONDIESIHATERON);
+		new FlxTimer().start(3.5, function(swagTimer:FlxTimer)
+		{
+			FlxG.camera.fade(FlxColor.BLACK, 0.01, true, function()
+			{
+				camHUD.visible = true;
+				startCountdown();
+			}, true);
+		});
+	}
 	function schoolIntro(?dialogueBox:DialogueBox):Void
 	{
 		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
@@ -1157,6 +1178,7 @@ class PlayState extends MusicBeatState
 		senpaiEvil.updateHitbox();
 		senpaiEvil.screenCenter();
 		//bob :)
+			
 			var bg:FlxSprite = new FlxSprite( -100);
 			bg.frames = Paths.getSparrowAtlas('bob/cutscene/sky');
 			bg.animation.addByPrefix('shake', 'sky shake', 24, false);
