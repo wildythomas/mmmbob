@@ -1143,23 +1143,25 @@ class PlayState extends MusicBeatState
 	}
 	function ONSLAUGHTIntro() 
 	{
+		camHUD.visible = false;
 		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
 		var RONDIESIHATERON:FlxSprite = new FlxSprite(400, 200);
 		RONDIESIHATERON.frames = Paths.getSparrowAtlas('bob/cutscene/IHATERON');
-		RONDIESIHATERON.animation.addByPrefix('idle', 'RonDied', 24);
+		RONDIESIHATERON.animation.addByPrefix('idle', 'RonDied', 24,false);
 		RONDIESIHATERON.animation.play('idle');
-		RONDIESIHATERON.scrollFactor.set(0.8, 0.9);
-		RONDIESIHATERON.scale.set(6, 6);
-		FlxG.sound.play(Paths.sound('IHATERON'));
+		RONDIESIHATERON.scrollFactor.set();
+		RONDIESIHATERON.updateHitbox();
+		RONDIESIHATERON.screenCenter();
 		add(RONDIESIHATERON);
-		new FlxTimer().start(3.5, function(swagTimer:FlxTimer)
-		{
-			FlxG.camera.fade(FlxColor.BLACK, 0.01, true, function()
+		FlxG.sound.play(Paths.sound('IHATERON'), 1, false, null, true, function()
 			{
-				camHUD.visible = true;
-				startCountdown();
-			}, true);
-		});
+				remove(RONDIESIHATERON);
+				FlxG.camera.fade(FlxColor.BLACK, 1, true, function()
+					{
+						camHUD.visible = true;
+						startCountdown();
+					}, true);
+			});
 	}
 	function schoolIntro(?dialogueBox:DialogueBox):Void
 	{
