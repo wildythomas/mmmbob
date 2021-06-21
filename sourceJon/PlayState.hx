@@ -772,6 +772,14 @@ class PlayState extends MusicBeatState
 					ground.active = false;
 					ground.antialiasing = true;
 					add(ground);
+
+					var deadron:FlxSprite = new FlxSprite(-700, 600).loadGraphic(Paths.image('bob/GoodHeDied'));
+					deadron.updateHitbox();
+					deadron.active = false;
+					deadron.scale.x = 0.8;
+					deadron.scale.y = 0.8;
+					deadron.antialiasing = true;
+					add(deadron);
 					
 				}
 			case 'ron' | 'little-man':
@@ -1148,6 +1156,8 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'trouble' :
 					ONSLAUGHTIntro();
+				case 'onslaught' :
+					bobSpookyIntro();
 				case 'run':
 					schoolIntro(doof);
 				default:
@@ -1198,6 +1208,30 @@ class PlayState extends MusicBeatState
 					}, true);
 			});
 	}
+	function bobSpookyIntro() 
+		{
+			camHUD.visible = false;
+			FlxG.camera.fade(FlxColor.BLACK, 0.2, true);
+			var bobTransforms:FlxSprite = new FlxSprite(600, 400);
+			bobTransforms.frames = Paths.getSparrowAtlas('bob/cutscene/bobSpooky');
+			bobTransforms.animation.addByPrefix('idle', 'BobTransforms', 24,false);
+			bobTransforms.animation.play('idle');
+			bobTransforms.scrollFactor.set();
+			bobTransforms.updateHitbox();
+			bobTransforms.screenCenter();
+			bobTransforms.scale.x = 1.2;
+			bobTransforms.scale.y = 1.2;
+			add(bobTransforms);
+			FlxG.sound.play(Paths.sound('bobSpooky'), 1, false, null, true, function()
+				{
+					remove(bobTransforms);
+					FlxG.camera.fade(FlxColor.BLACK, 0.5, true, function()
+						{
+							camHUD.visible = true;
+							startCountdown();
+						}, true);
+				});
+		}
 	function schoolIntro(?dialogueBox:DialogueBox):Void
 	{
 		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
