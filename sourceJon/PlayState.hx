@@ -3746,7 +3746,7 @@ class PlayState extends MusicBeatState
 				}
 				else
 				{
-					FlxTween.tween(randomthing, {width: 1, alpha: 0}, 0.2, {ease: FlxEase.sineOut});
+					FlxTween.tween(randomthing, {width: 1, alpha: 1}, 0.2, {ease: FlxEase.sineOut});
 				}
 				new FlxTimer().start(0.5 , function(tmr:FlxTimer)
 				{
