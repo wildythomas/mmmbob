@@ -772,6 +772,14 @@ class PlayState extends MusicBeatState
 					ground.active = false;
 					ground.antialiasing = true;
 					add(ground);
+
+					var deadron:FlxSprite = new FlxSprite(-700, 600).loadGraphic(Paths.image('bob/GoodHeDied'));
+					deadron.updateHitbox();
+					deadron.active = false;
+					deadron.scale.x = 0.8;
+					deadron.scale.y = 0.8;
+					deadron.antialiasing = true;
+					add(deadron);
 					
 				}
 			case 'ron' :
