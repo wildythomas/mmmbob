@@ -751,12 +751,37 @@ class PlayState extends MusicBeatState
 				add(ground);
 				
 			}
+			case 'trouble' :
+				{
+					defaultCamZoom = 0.9;
+					curStage = 'trouble';
+					var bg:FlxSprite = new FlxSprite(-100,10).loadGraphic(Paths.image('bob/happyRon_sky'));
+					bg.updateHitbox();
+					bg.scale.x = 1.2;
+					bg.scale.y = 1.2;
+					bg.active = false;
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.1, 0.1);
+					add(bg);
+					/*var glitchEffect = new FlxGlitchEffect(8,10,0.4,FlxGlitchDirection.HORIZONTAL);
+					var glitchSprite = new FlxEffectSprite(bg, [glitchEffect]);
+					add(glitchSprite);*/
+					
+					var ground:FlxSprite = new FlxSprite(-537, -158).loadGraphic(Paths.image('bob/happyRon_ground'));
+					ground.updateHitbox();
+					ground.active = false;
+					ground.antialiasing = true;
+					add(ground);
+					
+				}
 			case 'ron' :
 			{
 				defaultCamZoom = 0.9;
 				curStage = 'ron';
 				var bg:FlxSprite = new FlxSprite(-100,10).loadGraphic(Paths.image('bob/happyRon_sky'));
 				bg.updateHitbox();
+				bg.scale.x = 1.2;
+				bg.scale.y = 1.2;
 				bg.active = false;
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.1, 0.1);
@@ -847,6 +872,9 @@ class PlayState extends MusicBeatState
 				camPos.x += 600;
 				dad.y += 300;
 			case 'bob':
+				camPos.x += 600;
+				dad.y += 300;
+			case 'gloop-bob':
 				camPos.x += 600;
 				dad.y += 300;
 			case 'angrybob':
