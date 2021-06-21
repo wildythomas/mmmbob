@@ -782,8 +782,8 @@ class PlayState extends MusicBeatState
 					add(deadron);
 					
 				}
-			case 'ron' :
-			{
+			case 'ron' | 'little-man':
+				{
 				defaultCamZoom = 0.9;
 				curStage = 'ron';
 				var bg:FlxSprite = new FlxSprite(-100,10).loadGraphic(Paths.image('bob/happyRon_sky'));
@@ -803,8 +803,8 @@ class PlayState extends MusicBeatState
 				ground.active = false;
 				ground.antialiasing = true;
 				add(ground);
-				
-			}
+					
+				}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -896,9 +896,14 @@ class PlayState extends MusicBeatState
 				dad.y += 300;
 			case 'ron':
 				camPos.x -= 27;
-				camPos.x += 268;
+				camPos.y += 268;
 				dad.y += 268;
 				dad.x -= 27;
+			case 'little-man':
+				camPos.x -= 124;
+				camPos.y += 644;
+				dad.x += 124;
+				dad.y += 644;
 			case 'parents-christmas':
 				dad.x -= 500;
 			case 'senpai':
