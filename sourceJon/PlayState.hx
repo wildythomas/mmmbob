@@ -751,12 +751,37 @@ class PlayState extends MusicBeatState
 				add(ground);
 				
 			}
+			case 'trouble' :
+				{
+					defaultCamZoom = 0.9;
+					curStage = 'trouble';
+					var bg:FlxSprite = new FlxSprite(-100,10).loadGraphic(Paths.image('bob/nothappy_sky'));
+					bg.updateHitbox();
+					bg.scale.x = 1.2;
+					bg.scale.y = 1.2;
+					bg.active = false;
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.1, 0.1);
+					add(bg);
+					/*var glitchEffect = new FlxGlitchEffect(8,10,0.4,FlxGlitchDirection.HORIZONTAL);
+					var glitchSprite = new FlxEffectSprite(bg, [glitchEffect]);
+					add(glitchSprite);*/
+					
+					var ground:FlxSprite = new FlxSprite(-537, -158).loadGraphic(Paths.image('bob/nothappy_ground'));
+					ground.updateHitbox();
+					ground.active = false;
+					ground.antialiasing = true;
+					add(ground);
+					
+				}
 			case 'ron' | 'little-man':
-			{
+				{
 				defaultCamZoom = 0.9;
 				curStage = 'ron';
 				var bg:FlxSprite = new FlxSprite(-100,10).loadGraphic(Paths.image('bob/happyRon_sky'));
 				bg.updateHitbox();
+				bg.scale.x = 1.2;
+				bg.scale.y = 1.2;
 				bg.active = false;
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.1, 0.1);
@@ -770,8 +795,8 @@ class PlayState extends MusicBeatState
 				ground.active = false;
 				ground.antialiasing = true;
 				add(ground);
-				
-			}
+					
+				}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -847,6 +872,9 @@ class PlayState extends MusicBeatState
 				camPos.x += 600;
 				dad.y += 300;
 			case 'bob':
+				camPos.x += 600;
+				dad.y += 300;
+			case 'gloop-bob':
 				camPos.x += 600;
 				dad.y += 300;
 			case 'angrybob':
@@ -1150,13 +1178,15 @@ class PlayState extends MusicBeatState
 	{
 		camHUD.visible = false;
 		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
-		var RONDIESIHATERON:FlxSprite = new FlxSprite(400, 200);
+		var RONDIESIHATERON:FlxSprite = new FlxSprite(600, 400);
 		RONDIESIHATERON.frames = Paths.getSparrowAtlas('bob/cutscene/IHATERON');
 		RONDIESIHATERON.animation.addByPrefix('idle', 'RonDied', 24,false);
 		RONDIESIHATERON.animation.play('idle');
 		RONDIESIHATERON.scrollFactor.set();
 		RONDIESIHATERON.updateHitbox();
 		RONDIESIHATERON.screenCenter();
+		RONDIESIHATERON.scale.x = 1.2;
+		RONDIESIHATERON.scale.y = 1.2;
 		add(RONDIESIHATERON);
 		FlxG.sound.play(Paths.sound('IHATERON'), 1, false, null, true, function()
 			{
