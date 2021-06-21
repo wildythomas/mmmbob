@@ -103,3 +103,4 @@ run:hellbob:1
 Ron:ron:2
 Trouble:gloop-bob:2
 Onslaught:glitched-bob:2
+Little-man:little-man:2

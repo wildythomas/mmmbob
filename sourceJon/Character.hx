@@ -595,6 +595,19 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", -89, -51);
 				addOffset("singDOWN", 40, -120);
 				addOffset("Ugh", 71, -40);
+			case 'little-man':
+					tex = Paths.getSparrowAtlas('Small_Guy');
+					frames = tex;
+					animation.addByPrefix('idle', "idle", 24);
+					animation.addByPrefix('singUP', 'up', 24, false);
+					animation.addByPrefix('singDOWN', 'down', 24, false);
+					animation.addByPrefix('singLEFT', 'left', 24, false);
+					animation.addByPrefix('singRIGHT', 'right', 24, false);
+					addOffset('idle');
+					addOffset("singUP", -10, 8);
+					addOffset("singLEFT", -8, 0);
+					addOffset("singRIGHT", 0, 2);
+					addOffset("singDOWN", 0, -10);
 
 				//addOffset('idle', 0, 27);
 		}

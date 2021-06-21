@@ -751,7 +751,7 @@ class PlayState extends MusicBeatState
 				add(ground);
 				
 			}
-			case 'ron' :
+			case 'ron' | 'little-man':
 			{
 				defaultCamZoom = 0.9;
 				curStage = 'ron';
@@ -860,9 +860,14 @@ class PlayState extends MusicBeatState
 				dad.y += 300;
 			case 'ron':
 				camPos.x -= 27;
-				camPos.x += 268;
+				camPos.y += 268;
 				dad.y += 268;
 				dad.x -= 27;
+			case 'little-man':
+				camPos.x -= 124;
+				camPos.y += 644;
+				dad.x += 124;
+				dad.y += 644;
 			case 'parents-christmas':
 				dad.x -= 500;
 			case 'senpai':
