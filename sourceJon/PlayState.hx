@@ -755,7 +755,7 @@ class PlayState extends MusicBeatState
 				{
 					defaultCamZoom = 0.9;
 					curStage = 'trouble';
-					var bg:FlxSprite = new FlxSprite(-100,10).loadGraphic(Paths.image('bob/happyRon_sky'));
+					var bg:FlxSprite = new FlxSprite(-100,10).loadGraphic(Paths.image('bob/nothappy_sky'));
 					bg.updateHitbox();
 					bg.scale.x = 1.2;
 					bg.scale.y = 1.2;
@@ -767,7 +767,7 @@ class PlayState extends MusicBeatState
 					var glitchSprite = new FlxEffectSprite(bg, [glitchEffect]);
 					add(glitchSprite);*/
 					
-					var ground:FlxSprite = new FlxSprite(-537, -158).loadGraphic(Paths.image('bob/happyRon_ground'));
+					var ground:FlxSprite = new FlxSprite(-537, -158).loadGraphic(Paths.image('bob/nothappy_ground'));
 					ground.updateHitbox();
 					ground.active = false;
 					ground.antialiasing = true;
