@@ -47,8 +47,6 @@ class StoryMenuState extends MusicBeatState
 	
 	var bgBack:FlxSprite;
 	var bgFront:FlxSprite;
-	var WeekText1:FlxSprite;
-	var WeekText2:FlxSprite;
 	var Week1:FlxSprite;
 	var Week2:FlxSprite;
 	var mainthingidk:FlxSprite;
@@ -56,6 +54,9 @@ class StoryMenuState extends MusicBeatState
 	var sprDifficulty:FlxSprite;
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
+
+	var bobWeekIndicator:FlxSprite;
+	var bobOnslaughtIndicator:FlxSprite;
 
 	override function create()
 	{
@@ -95,8 +96,6 @@ class StoryMenuState extends MusicBeatState
 
 		grpLocks = new FlxTypedGroup<FlxSprite>();
 		add(grpLocks);
-		
-
 		
 		bgBack = new FlxSprite( -21.4, -1.2).loadGraphic(Paths.image('bob/Sky_Bob', 'shared'));
 		bgFront = new FlxSprite(0, 37.2).loadGraphic(Paths.image('bob/Screen_Sky', 'shared'));
@@ -188,6 +187,18 @@ class StoryMenuState extends MusicBeatState
 		//updateText();
 
 		trace("Line 165");
+
+		bobWeekIndicator = new FlxSprite(15, FlxG.height - 170).loadGraphic(Paths.image("bob/bobweek1", "shared"));
+		bobWeekIndicator.antialiasing = true;
+		bobWeekIndicator.scale.x = 0.85;
+		bobWeekIndicator.scale.y = 0.85;
+		add(bobWeekIndicator);
+
+		bobOnslaughtIndicator = new FlxSprite(FlxG.width - 510, FlxG.height - 180).loadGraphic(Paths.image("bob/bobweek2", "shared"));
+		bobOnslaughtIndicator.antialiasing = true;
+		bobOnslaughtIndicator.scale.x = 0.55;
+		bobOnslaughtIndicator.scale.y = 0.55;
+		add(bobOnslaughtIndicator);
 
 		super.create();
 	}
