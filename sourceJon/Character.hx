@@ -541,6 +541,7 @@ class Character extends FlxSprite
 					animation.addByPrefix('singDOWN', 'bob_DOWN', 24, false);
 					animation.addByPrefix('singLEFT', 'bob_LEFT', 24, false);
 					animation.addByPrefix('singRIGHT', 'bob_RIGHT', 24, false);
+					animation.addByPrefix('Transform', 'bob_transform', 24, false);
 	
 					addOffset('idle');
 	

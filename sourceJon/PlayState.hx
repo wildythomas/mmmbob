@@ -1157,7 +1157,7 @@ class PlayState extends MusicBeatState
 				case 'trouble' :
 					ONSLAUGHTIntro();
 				case 'onslaught' :
-					bobSpookyIntro();
+					//bobSpookyIntro();
 				case 'run':
 					schoolIntro(doof);
 				default:
@@ -1433,7 +1433,17 @@ class PlayState extends MusicBeatState
 
 		startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 		{
-			dad.dance();
+			if (curSong.toLowerCase() == 'onslaught')
+			{
+				if (curBeat <= 500)
+				{
+					dad.dance();
+				}
+			}
+			else
+			{
+				dad.dance();
+			}
 			gf.dance();
 			boyfriend.playAnim('idle');
 
@@ -3851,6 +3861,10 @@ class PlayState extends MusicBeatState
 				});
 			}
 		}
+		if (curSong.toLowerCase() == 'trouble' && curBeat == 504 )
+		{
+			BobIngameTransform();
+		}
 		if (curSong.toLowerCase() == 'onslaught' && curBeat == 96 )
 		{
 			InvisibleNotes();
@@ -3922,15 +3936,29 @@ class PlayState extends MusicBeatState
 			lightningStrikeShit();
 		}
 	}
-	function WindowGoBack()
+	function BobIngameTransform()
 	{
-		new FlxTimer().start(0.01, function(tmr:FlxTimer)
+		//screw you aether i want to fix the ingame cutscene
+		dad.playAnim('Transform', true);
+		FlxG.sound.play(Paths.sound('bobSpooky'));
+		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+		black.scrollFactor.set();
+		new FlxTimer().start(1.7, function(tmr:FlxTimer)
 		{
-			var xLerp:Float = FlxMath.lerp(windowX, Lib.application.window.x, 0.95);
-			var yLerp:Float = FlxMath.lerp(windowY, Lib.application.window.y, 0.95);
-			Lib.application.window.move(Std.int(xLerp),Std.int(yLerp));
-		}, 20);
+			add(black);
+			FlxG.camera.fade(FlxColor.WHITE, 0.1, true);
+		});
+
 	}
+	function WindowGoBack()
+		{
+			new FlxTimer().start(0.01, function(tmr:FlxTimer)
+			{
+				var xLerp:Float = FlxMath.lerp(windowX, Lib.application.window.x, 0.95);
+				var yLerp:Float = FlxMath.lerp(windowY, Lib.application.window.y, 0.95);
+				Lib.application.window.move(Std.int(xLerp),Std.int(yLerp));
+			}, 20);
+		}
 	/*function loadFileAsString() 
 	{
 		var bruh:FlxSprite = new FlxSprite(FlxG.random.int(0, 775), FlxG.random.int(0, 442));
