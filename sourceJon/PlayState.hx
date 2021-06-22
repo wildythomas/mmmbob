@@ -1157,8 +1157,7 @@ class PlayState extends MusicBeatState
 				case 'trouble' :
 					ONSLAUGHTIntro();
 				case 'onslaught' :
-					//bobSpookyIntro();
-					startCountdown();
+					bobSpookyIntro();
 				case 'run':
 					schoolIntro(doof);
 				default:
@@ -3856,10 +3855,6 @@ class PlayState extends MusicBeatState
 		{
 			InvisibleNotes();
 		}
-		if (curSong.toLowerCase() == 'trouble' && curBeat == 504)
-		{
-			BobTransform();
-		} 
 		if (curSong.toLowerCase() == 'onslaught' && curBeat == 128 )
 		{
 			IsNoteSpinning = true;
@@ -3935,17 +3930,6 @@ class PlayState extends MusicBeatState
 			var yLerp:Float = FlxMath.lerp(windowY, Lib.application.window.y, 0.95);
 			Lib.application.window.move(Std.int(xLerp),Std.int(yLerp));
 		}, 20);
-	}
-	function BobTransform() {
-		dad.playAnim('Transform', true);
-		FlxG.sound.play(Paths.sound('bobSpooky'));
-		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
-		black.scrollFactor.set();
-		new FlxTimer().start(1.7 , function(tmr:FlxTimer)
-		{
-			add(black);
-			FlxG.camera.fade(FlxColor.WHITE, 0.5, true);
-		});
 	}
 	/*function loadFileAsString() 
 	{
