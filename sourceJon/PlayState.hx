@@ -1193,8 +1193,8 @@ class PlayState extends MusicBeatState
 		RONDIESIHATERON.scrollFactor.set();
 		RONDIESIHATERON.updateHitbox();
 		RONDIESIHATERON.screenCenter();
-		RONDIESIHATERON.scale.x = 1.2;
-		RONDIESIHATERON.scale.y = 1.2;
+		RONDIESIHATERON.scale.x = 1.12;
+		RONDIESIHATERON.scale.y = 1.12;
 		add(RONDIESIHATERON);
 		FlxG.sound.play(Paths.sound('IHATERON'), 1, false, null, true, function()
 			{
