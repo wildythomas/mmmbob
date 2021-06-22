@@ -47,6 +47,8 @@ class StoryMenuState extends MusicBeatState
 	
 	var bgBack:FlxSprite;
 	var bgFront:FlxSprite;
+	var WeekText1:FlxSprite;
+	var WeekText2:FlxSprite;
 	var Week1:FlxSprite;
 	var Week2:FlxSprite;
 	var mainthingidk:FlxSprite;
@@ -93,6 +95,8 @@ class StoryMenuState extends MusicBeatState
 
 		grpLocks = new FlxTypedGroup<FlxSprite>();
 		add(grpLocks);
+		
+
 		
 		bgBack = new FlxSprite( -21.4, -1.2).loadGraphic(Paths.image('bob/Sky_Bob', 'shared'));
 		bgFront = new FlxSprite(0, 37.2).loadGraphic(Paths.image('bob/Screen_Sky', 'shared'));
@@ -146,7 +150,8 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 124");
 
-		leftArrow = new FlxSprite(10.7,637.25);
+
+		leftArrow = new FlxSprite(-10,637.25);
 		leftArrow.frames = ui_tex;
 		leftArrow.animation.addByPrefix('idle', "arrow left");
 		leftArrow.animation.addByPrefix('press', "arrow push left");
@@ -155,19 +160,19 @@ class StoryMenuState extends MusicBeatState
 		leftArrow.animation.play('idle');
 		difficultySelectors.add(leftArrow);
 
-		sprDifficulty = new FlxSprite(leftArrow.x + 120, leftArrow.y);
+		sprDifficulty = new FlxSprite(leftArrow.x + 130, leftArrow.y + 30);
 		sprDifficulty.frames = ui_tex;
 		sprDifficulty.animation.addByPrefix('easy', 'EASY');
 		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
 		sprDifficulty.animation.addByPrefix('hard', 'HARD');
-		sprDifficulty.scale.x = 0.8;
-		sprDifficulty.scale.y = 0.8;
+		sprDifficulty.scale.x = 0.95;
+		sprDifficulty.scale.y = 0.95;
 		sprDifficulty.animation.play('easy');
 		changeDifficulty();
 
 		difficultySelectors.add(sprDifficulty);
 
-		rightArrow = new FlxSprite(sprDifficulty.x + sprDifficulty.width + 10, leftArrow.y);
+		rightArrow = new FlxSprite(sprDifficulty.x + sprDifficulty.width + 20, leftArrow.y);
 		rightArrow.frames = ui_tex;
 		rightArrow.animation.addByPrefix('idle', 'arrow right');
 		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
