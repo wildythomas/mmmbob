@@ -767,7 +767,7 @@ class PlayState extends MusicBeatState
 					var glitchSprite = new FlxEffectSprite(bg, [glitchEffect]);
 					add(glitchSprite);*/
 					
-					var ground:FlxSprite = new FlxSprite(-537, -158).loadGraphic(Paths.image('bob/nothappy_ground'));
+					var ground:FlxSprite = new FlxSprite(-537, -250).loadGraphic(Paths.image('bob/nothappy_ground'));
 					ground.updateHitbox();
 					ground.active = false;
 					ground.antialiasing = true;
@@ -798,7 +798,7 @@ class PlayState extends MusicBeatState
 				var glitchSprite = new FlxEffectSprite(bg, [glitchEffect]);
 				add(glitchSprite);*/
 				
-				var ground:FlxSprite = new FlxSprite(-537, -158).loadGraphic(Paths.image('bob/happyRon_ground'));
+				var ground:FlxSprite = new FlxSprite(-537, -250).loadGraphic(Paths.image('bob/happyRon_ground'));
 				ground.updateHitbox();
 				ground.active = false;
 				ground.antialiasing = true;
