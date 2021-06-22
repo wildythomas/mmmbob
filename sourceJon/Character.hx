@@ -533,18 +533,19 @@ class Character extends FlxSprite
 
 				flipX = true;
 
-				case 'gloop-bob':
-					tex = Paths.getSparrowAtlas('bob/oohscary');
-					frames = tex;
-					animation.addByPrefix('idle', "bob_idle", 24, false);
-					animation.addByPrefix('singUP', 'bob_UP', 24, false);
-					animation.addByPrefix('singDOWN', 'bob_DOWN', 24, false);
-					animation.addByPrefix('singLEFT', 'bob_LEFT', 24, false);
-					animation.addByPrefix('singRIGHT', 'bob_RIGHT', 24, false);
+			case 'gloop-bob':
+				tex = Paths.getSparrowAtlas('bob/oohscary');
+				frames = tex;
+				animation.addByPrefix('idle', "bob_idle", 24, false);
+				animation.addByPrefix('singUP', 'bob_UP', 24, false);
+				animation.addByPrefix('singDOWN', 'bob_DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'bob_LEFT', 24, false);
+				animation.addByPrefix('singRIGHT', 'bob_RIGHT', 24, false);
+				animation.addByPrefix('Transform', 'bob_transform', 24, false);
 	
-					addOffset('idle');
+				addOffset('idle');
 	
-					flipX = false;
+				flipX = false;
 				
 			case 'angrybob':
 				tex = Paths.getSparrowAtlas('bob/angrybob_asset');
