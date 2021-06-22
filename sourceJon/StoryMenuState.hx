@@ -47,6 +47,8 @@ class StoryMenuState extends MusicBeatState
 	
 	var bgBack:FlxSprite;
 	var bgFront:FlxSprite;
+	var WeekText1:FlxSprite;
+	var WeekText2:FlxSprite;
 	var Week1:FlxSprite;
 	var Week2:FlxSprite;
 	var mainthingidk:FlxSprite;
@@ -93,6 +95,8 @@ class StoryMenuState extends MusicBeatState
 
 		grpLocks = new FlxTypedGroup<FlxSprite>();
 		add(grpLocks);
+		
+
 		
 		bgBack = new FlxSprite( -21.4, -1.2).loadGraphic(Paths.image('bob/Sky_Bob', 'shared'));
 		bgFront = new FlxSprite(0, 37.2).loadGraphic(Paths.image('bob/Screen_Sky', 'shared'));
