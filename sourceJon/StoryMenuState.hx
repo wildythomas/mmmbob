@@ -53,7 +53,7 @@ class StoryMenuState extends MusicBeatState
 	var difficultySelectors_1:FlxGroup;
 	var sprDifficulty_1:FlxSprite;
 	var leftArrow_1:FlxSprite;
-	var rightArrow_1y:FlxSprite;
+	var rightArrow_1:FlxSprite;
 
 	var bobWeekIndicator:FlxSprite;
 	var bobOnslaughtIndicator:FlxSprite;
@@ -171,14 +171,14 @@ class StoryMenuState extends MusicBeatState
 
 		difficultySelectors_1.add(sprDifficulty_1);
 
-		rightArrow_1y = new FlxSprite(sprDifficulty_1.x + sprDifficulty_1.width + 20, leftArrow_1.y);
-		rightArrow_1y.frames = ui_tex;
-		rightArrow_1y.animation.addByPrefix('idle', 'arrow right');
-		rightArrow_1y.animation.addByPrefix('press', "arrow push right", 24, false);
-		rightArrow_1y.animation.play('idle');
-		rightArrow_1y.scale.x = 0.8;
-		rightArrow_1y.scale.y = 0.8;
-		difficultySelectors_1.add(rightArrow_1y);
+		rightArrow_1 = new FlxSprite(sprDifficulty_1.x + sprDifficulty_1.width + 20, leftArrow_1.y);
+		rightArrow_1.frames = ui_tex;
+		rightArrow_1.animation.addByPrefix('idle', 'arrow right');
+		rightArrow_1.animation.addByPrefix('press', "arrow push right", 24, false);
+		rightArrow_1.animation.play('idle');
+		rightArrow_1.scale.x = 0.8;
+		rightArrow_1.scale.y = 0.8;
+		difficultySelectors_1.add(rightArrow_1);
 
 		trace("Line 150");
 		// add(rankText);
@@ -244,11 +244,11 @@ class StoryMenuState extends MusicBeatState
 
 				if (controls.RIGHT)
 					if (curWeek == 0)
-						rightArrow_1y.animation.play('press');
+						rightArrow_1.animation.play('press');
 					else
-						rightArrow_1y.animation.play('idle');
+						rightArrow_1.animation.play('idle');
 				else
-					rightArrow_1y.animation.play('idle');
+					rightArrow_1.animation.play('idle');
 
 				if (controls.LEFT)
 					if (curWeek == 0)
