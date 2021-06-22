@@ -1156,8 +1156,6 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'trouble' :
 					ONSLAUGHTIntro();
-				case 'onslaught' :
-					//bobSpookyIntro();
 				case 'run':
 					schoolIntro(doof);
 				default:
