@@ -95,9 +95,7 @@ class PlayState extends MusicBeatState
 	
 	//thx fnfhd
 	var shootBeats:Array<Int> =    [128, 192, 200, 204, 254, 256, 260, 264, 268, 272, 276, 280, 284, 336, 338, 340, 342, 344, 346, 348, 351];
-	var shootBeatsPos:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   3,   3,   3,   0,   0,   3,   3,   0];
-	var shootBeatsEasy:Array<Int> =    [128, 192, 200, 204, 254, 256, 260, 264, 268, 272, 276, 284, 338, 342, 346, 351];
-	var shootBeatsPosEasy:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   3,   0,   3,   0];
+	var shootBeatsPos:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   0,   0,   0,   3,   3,   0,   0,   3];
 	var DoIHit:Bool = true;
 	var IsNoteSpinning:Bool = false;
 	var SpinAmount:Float = 0;
@@ -1698,51 +1696,24 @@ class PlayState extends MusicBeatState
 		var beatStepTime = 600 * (100 / songData.bpm);
 		if (curSong == 'Onslaught')
 		{
-			if (storyDifficulty == 0)
+			for (x in 0...shootBeats.length)
 			{
-				for (x in 0...shootBeats.length)
+				var warnNoteTime = shootBeats[x];
+				var notethingidk:Float = warnNoteTime * beatStepTime;
+				var warnNote:Note;
+				if (DoIHit)
 				{
-
-					var warnNoteTime = shootBeatsEasy[x];
-					var notethingidk:Float = warnNoteTime * beatStepTime;
-					var warnNote:Note;
-					if (DoIHit)
-					{
-						warnNote = new Note(notethingidk, shootBeatsPosEasy[x], null, false, true);
-					}
-					else
-					{
-						warnNote = new Note(notethingidk, shootBeatsPosEasy[x], null, false, false, true);
-					}
-					DoIHit = !DoIHit;
-					warnNote.scrollFactor.set(0, 0);
-					unspawnNotes.push(warnNote);
-					warnNote.mustPress = true;
-					warnNote.x += FlxG.width / 2; // general offset
+					warnNote = new Note(notethingidk, shootBeatsPos[x], null, false, true);
 				}
-			}
-			else
-			{
-				for (x in 0...shootBeats.length)
+				else
 				{
-
-					var warnNoteTime = shootBeats[x];
-					var notethingidk:Float = warnNoteTime * beatStepTime;
-					var warnNote:Note;
-					if (DoIHit)
-					{
-						warnNote = new Note(notethingidk, shootBeatsPos[x], null, false, true);
-					}
-					else
-					{
-						warnNote = new Note(notethingidk, shootBeatsPos[x], null, false, false, true);
-					}
-					DoIHit = !DoIHit;
-					warnNote.scrollFactor.set(0, 0);
-					unspawnNotes.push(warnNote);
-					warnNote.mustPress = true;
-					warnNote.x += FlxG.width / 2; // general offset
+					warnNote = new Note(notethingidk, shootBeatsPos[x], null, false, false, true);
 				}
+				DoIHit = !DoIHit;
+				warnNote.scrollFactor.set(0, 0);
+				unspawnNotes.push(warnNote);
+				warnNote.mustPress = true;
+				warnNote.x += FlxG.width / 2; // general offset
 			}
 		}
 		
@@ -3833,7 +3804,7 @@ class PlayState extends MusicBeatState
 			{
 				var randomthing:FlxSprite = new FlxSprite(FlxG.random.int(0, 1077), FlxG.random.int(0, 622));
 				FlxG.sound.play(Paths.sound("pop_up"), 1);
-				randomthing.loadGraphic(Paths.image('bob/PopUps/popup' + FlxG.random.int(1,3), 'shared'));
+				randomthing.loadGraphic(Paths.image('bob/PopUps/popup' + FlxG.random.int(1,8), 'shared'));
 				randomthing.updateHitbox();
 				randomthing.alpha = 0;
 				randomthing.width = 0;
@@ -3849,7 +3820,7 @@ class PlayState extends MusicBeatState
 				{
 					FlxTween.tween(randomthing, {width: 1, alpha: 1}, 0.2, {ease: FlxEase.sineOut});
 				}
-				new FlxTimer().start(0.5 , function(tmr:FlxTimer)
+				new FlxTimer().start(1 , function(tmr:FlxTimer)
 				{
 					appearscreen = true;
 				});
@@ -3869,6 +3840,8 @@ class PlayState extends MusicBeatState
 		}
 		if (curSong.toLowerCase() == 'onslaught' && curBeat == 128 )
 		{
+			windowX = Lib.application.window.x;
+			windowY = Lib.application.window.y;
 			IsNoteSpinning = true;
 			VisibleNotes();
 		}
