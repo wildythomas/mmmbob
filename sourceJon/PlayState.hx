@@ -3957,6 +3957,15 @@ class PlayState extends MusicBeatState
 				Lib.application.window.move(Std.int(xLerp),Std.int(yLerp));
 			}, 20);
 		}
+	function changeDadCharacter(id:String)
+		{				
+			var olddadx = PlayState.dad.x;
+			var olddady = PlayState.dad.y;
+			remove(dad);
+			dad = new Character(olddadx, olddady, SONG.player2);
+			add(dad);
+			iconP2.animation.play(id);
+		}
 	/*function loadFileAsString() 
 	{
 		var bruh:FlxSprite = new FlxSprite(FlxG.random.int(0, 775), FlxG.random.int(0, 442));
