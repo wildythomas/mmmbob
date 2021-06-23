@@ -612,11 +612,12 @@ class Character extends FlxSprite
 			case 'pizza':
 					tex = Paths.getSparrowAtlas('littleman/PizzaMan');
 					frames = tex;
-					animation.addByPrefix('idle', "idle", 29.97);
-					animation.addByPrefix('singUP', 'up', 29.97, false);
-					animation.addByPrefix('singDOWN', 'down', 29.97, false);
-					animation.addByPrefix('singLEFT', 'left', 29.97, false);
-					animation.addByPrefix('singRIGHT', 'right', 29.97, false);
+					animation.addByPrefix('idle', "PizzasHere", 29);
+					animation.addByPrefix('fall', "PizzasHere", 29);
+					animation.addByPrefix('singUP', 'Up', 29, false);
+					animation.addByPrefix('singDOWN', 'Down', 29, false);
+					animation.addByPrefix('singLEFT', 'Left', 29, false);
+					animation.addByPrefix('singRIGHT', 'Right', 29, false);
 					addOffset('idle');
 		}
 

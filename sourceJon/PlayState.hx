@@ -3859,6 +3859,14 @@ class PlayState extends MusicBeatState
 				});
 			}
 		}
+		if (curSong.toLowerCase() == 'little-man' && curBeat == 1397 )
+		{
+			changeDadCharacter('pizza');
+		}
+		if (curSong.toLowerCase() == 'little-man' && curBeat == 1497 )
+		{
+			changeDadCharacter('little-man');
+		}
 		if (curSong.toLowerCase() == 'trouble' && curBeat == 504 )
 		{
 			BobIngameTransform();
@@ -3959,10 +3967,10 @@ class PlayState extends MusicBeatState
 		}
 	function changeDadCharacter(id:String)
 		{				
-			var olddadx = PlayState.dad.x;
-			var olddady = PlayState.dad.y;
+			var olddadx = dad.x;
+			var olddady = dad.y;
 			remove(dad);
-			dad = new Character(olddadx, olddady, SONG.player2);
+			dad = new Character(olddadx, olddady, id);
 			add(dad);
 			iconP2.animation.play(id);
 		}
