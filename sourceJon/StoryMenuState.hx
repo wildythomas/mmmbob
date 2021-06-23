@@ -22,8 +22,7 @@ using StringTools;
 
 class StoryMenuState extends MusicBeatState
 {
-	var scoreText_1:FlxText;
-	var scoreText_2:FlxText;
+	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
 		['Sunshine', 'Withered', 'run'],
@@ -66,6 +65,8 @@ class StoryMenuState extends MusicBeatState
 	var bobWeekIndicator:FlxSprite;
 	var bobOnslaughtIndicator:FlxSprite;
 
+	var choose:FlxSprite;
+
 	override function create()
 	{
 		#if windows
@@ -84,16 +85,13 @@ class StoryMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 		
 		
-		scoreText_1 = new FlxText(10, 10, 0, "SCORE: 49324858", 36);
-		scoreText_1.setFormat("VCR OSD Mono", 32);
-
-		scoreText_2 = new FlxText(FlxG.width - 600, 10, 0, "SCORE: 49324858", 36);
-		scoreText_2.setFormat("VCR OSD Mono", 32);
+		scoreText = new FlxText(10, 10, 0, "SCORE: 49324858", 36);
+		scoreText.setFormat("VCR OSD Mono", 32);
 
 		var rankText:FlxText = new FlxText(0, 10);
 		rankText.text = 'RANK: GREAT';
 		rankText.setFormat(Paths.font("vcr.ttf"), 32);
-		rankText.size = scoreText_1.size;
+		rankText.size = scoreText.size;
 		rankText.screenCenter(X);
 
 		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets');
@@ -228,8 +226,7 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 150");
 		// add(rankText);
-		add(scoreText_1);
-		add(scoreText_2);
+		add(scoreText);
 
 		//updateText();
 
@@ -247,19 +244,24 @@ class StoryMenuState extends MusicBeatState
 		bobOnslaughtIndicator.scale.y = 0.55;
 		add(bobOnslaughtIndicator);
 
+		choose = new FlxSprite(FlxG.width / 2, 5).loadGraphic(Paths.image("bob/choose", "shared"));
+		choose.antialiasing = true;
+		choose.scale.x = 0.85;
+		choose.scale.y = 0.85;
+		choose.screenCenter(X);
+		add(choose);
+
 		super.create();
 	}
 
 	override function update(elapsed:Float)
 	{
-		// scoreText_1.setFormat('VCR OSD Mono', 32);
-		lerpScore_1 = Math.floor(FlxMath.lerp(lerpScore_1, intendedScore_1, 0.5));
-		lerpScore_2 = Math.floor(FlxMath.lerp(lerpScore_2, intendedScore_2, 0.5));
+		// scoreText.setFormat('VCR OSD Mono', 32);
+		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));
 
-		scoreText_1.text = "WEEK SCORE:" + lerpScore_1;
-		scoreText_2.text = "WEEK SCORE:" + lerpScore_2;
+		scoreText.text = "WEEK SCORE:" + lerpScore;
 
-		// FlxG.watch.addQuick('font', scoreText_1.font);
+		// FlxG.watch.addQuick('font', scoreText.font);
 
 		difficultySelectors_1.visible = weekUnlocked[curWeek];
 		difficultySelectors_2.visible = weekUnlocked[curWeek];
@@ -504,12 +506,10 @@ class StoryMenuState extends MusicBeatState
 		if (curWeek == 1)
 			sprDifficulty_2.y = leftArrow_2.y - 15;
 		
-		intendedScore_1 = Highscore.getWeekScore(0, curDifficulty_1);
-		intendedScore_2 = Highscore.getWeekScore(1, curDifficulty_2);
+		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty_1);
 
 		#if !switch
-		intendedScore_1 = Highscore.getWeekScore(curWeek, curDifficulty_1);
-		intendedScore_2 = Highscore.getWeekScore(curWeek, curDifficulty_2);
+		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty_1);
 		#end
 
 		if (curWeek == 0)
@@ -519,10 +519,8 @@ class StoryMenuState extends MusicBeatState
 			FlxTween.tween(sprDifficulty_2, {y: leftArrow_2.y + 15, alpha: 1}, 0.07);
 	}
 
-	var lerpScore_1:Int = 0;
-	var lerpScore_2:Int = 0;
-	var intendedScore_1:Int = 0;
-	var intendedScore_2:Int = 0;
+	var lerpScore:Int = 0;
+	var intendedScore:Int = 0;
 
 	function changeWeek(change:Int = 0):Void
 	{
@@ -546,6 +544,8 @@ class StoryMenuState extends MusicBeatState
 		}
 
 		FlxG.sound.play(Paths.sound('scrollMenu'));
+
+		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty_1);
 
 		//updateText();
 	}
