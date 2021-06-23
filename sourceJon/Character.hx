@@ -609,8 +609,15 @@ class Character extends FlxSprite
 					addOffset("singLEFT", -8, 0);
 					addOffset("singRIGHT", 0, 2);
 					addOffset("singDOWN", 0, -10);
-
-				//addOffset('idle', 0, 27);
+			case 'pizza':
+					tex = Paths.getSparrowAtlas('littleman/PizzaMan');
+					frames = tex;
+					animation.addByPrefix('idle', "idle", 29.97);
+					animation.addByPrefix('singUP', 'up', 29.97, false);
+					animation.addByPrefix('singDOWN', 'down', 29.97, false);
+					animation.addByPrefix('singLEFT', 'left', 29.97, false);
+					animation.addByPrefix('singRIGHT', 'right', 29.97, false);
+					addOffset('idle');
 		}
 
 		dance();
