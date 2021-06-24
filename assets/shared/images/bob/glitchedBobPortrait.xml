@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="glitchedBobPortrait.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bob Enter0000" x="10" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0001" x="10" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0002" x="426" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0003" x="426" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0004" x="842" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0005" x="842" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0006" x="1258" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0007" x="1258" y="10" width="406" height="425"/>
+	<SubTexture name="Bob Enter0008" x="10" y="445" width="406" height="425"/>
+	<SubTexture name="Bob Enter0009" x="10" y="445" width="406" height="425"/>
+	<SubTexture name="Bob Enter0010" x="426" y="445" width="406" height="425"/>
+	<SubTexture name="Bob Enter0011" x="426" y="445" width="406" height="425"/>
+</TextureAtlas>
