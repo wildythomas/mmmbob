@@ -3833,7 +3833,7 @@ class PlayState extends MusicBeatState
 			{
 				var randomthing:FlxSprite = new FlxSprite(FlxG.random.int(0, 1077), FlxG.random.int(0, 622));
 				FlxG.sound.play(Paths.sound("pop_up"), 1);
-				randomthing.loadGraphic(Paths.image('bob/PopUps/popup' + FlxG.random.int(1,10), 'shared'));
+				randomthing.loadGraphic(Paths.image('bob/PopUps/popup' + FlxG.random.int(1,11), 'shared'));
 				randomthing.updateHitbox();
 				randomthing.alpha = 0;
 				randomthing.width = 0;
