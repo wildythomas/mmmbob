@@ -24,6 +24,7 @@ class OptionsMenu extends MusicBeatState
 			new SendWebsiteOption("some computers literally died when it tries to send them to the website im sorry"),
 			new ScaryBS("disable the eye thing"),
 			new ShakingScreen("disable the screen shaking"),
+			new LimitPopups("limit the popups on onslaught"),
 			new HappyVersion("happy :)")
 		]),
 		new OptionCatagory("Gameplay", [

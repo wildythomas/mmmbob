@@ -2076,13 +2076,13 @@ class PlayState extends MusicBeatState
 		}
 
 		super.update(elapsed);
-		
 		if (SONG.song.toLowerCase() == 'onslaught' && IsNoteSpinning){
 			var thisX:Float =  Math.sin(SpinAmount * (SpinAmount / 2)) * 100;
 			var thisY:Float =  Math.sin(SpinAmount * (SpinAmount)) * 100;
 			var yVal = Std.int(windowY + thisY);
 			var xVal = Std.int(windowX + thisX);
-			Lib.application.window.move(xVal,yVal);
+			if (!FlxG.save.data.shakingscreen)
+				Lib.application.window.move(xVal,yVal);
 			for (str in playerStrums){
 				str.angle = str.angle + SpinAmount;
 				SpinAmount = SpinAmount + 0.0003;
@@ -3709,7 +3709,6 @@ class PlayState extends MusicBeatState
 		{
 			notes.sort(FlxSort.byY, FlxSort.DESCENDING);
 		}
-
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
@@ -3829,7 +3828,10 @@ class PlayState extends MusicBeatState
 			}
 		if (curSong.toLowerCase() == 'onslaught' && curBeat >= 128 && curBeat <= 352 )
 		{
-			if (FlxG.random.bool(curBeat/10) && appearscreen)
+			var amount = curBeat/10;
+			if (!FlxG.save.data.limitpopups)
+				amount = amount/2;
+			if (FlxG.random.bool(amount) && appearscreen)
 			{
 				var randomthing:FlxSprite = new FlxSprite(FlxG.random.int(0, 1077), FlxG.random.int(0, 622));
 				FlxG.sound.play(Paths.sound("pop_up"), 1);
@@ -3887,7 +3889,8 @@ class PlayState extends MusicBeatState
 		if (curSong.toLowerCase() == 'onslaught' && curBeat == 352 )
 		{
 			IsNoteSpinning = false;
-			WindowGoBack();
+			if (!FlxG.save.data.shakingscreen)
+				WindowGoBack();
 			VisibleNotes();
 		}
 		switch (curStage)

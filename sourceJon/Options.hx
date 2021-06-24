@@ -154,6 +154,25 @@ class ShakingScreen extends Option
 		return "shaking screen " + (!FlxG.save.data.shakingscreen ? "on" : "off");
 	}
 }
+class LimitPopups extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.limitpopups = !FlxG.save.data.limitpopups;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "limit popups" + (!FlxG.save.data.limitpopups ? "on" : "off");
+	}
+}
 class ScaryBS extends Option
 {
 	public function new(desc:String)
