@@ -1,15 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="ronPortrait.png">
-	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Ron Enter0000" x="10" y="10" width="339" height="426" frameX="0" frameY="0" frameWidth="457" frameHeight="426"/>
-	<SubTexture name="Ron Enter0001" x="10" y="10" width="339" height="426" frameX="0" frameY="0" frameWidth="457" frameHeight="426"/>
-	<SubTexture name="Ron Enter0002" x="359" y="10" width="339" height="426" frameX="0" frameY="0" frameWidth="457" frameHeight="426"/>
-	<SubTexture name="Ron Enter0003" x="359" y="10" width="339" height="426" frameX="0" frameY="0" frameWidth="457" frameHeight="426"/>
-	<SubTexture name="Ron Enter0004" x="708" y="10" width="457" height="426"/>
-	<SubTexture name="Ron Enter0005" x="708" y="10" width="457" height="426"/>
-	<SubTexture name="Ron Enter0006" x="1175" y="10" width="457" height="426"/>
-	<SubTexture name="Ron Enter0007" x="1175" y="10" width="457" height="426"/>
-	<SubTexture name="Ron Enter0008" x="10" y="446" width="457" height="426"/>
-	<SubTexture name="Ron Enter0009" x="10" y="446" width="457" height="426"/>
+	<SubTexture name="Ron Enter0000" x="10" y="10" width="1280" height="743"/>
+	<SubTexture name="Ron Enter0001" x="10" y="10" width="1280" height="743"/>
+	<SubTexture name="Ron Enter0002" x="10" y="763" width="1280" height="743"/>
+	<SubTexture name="Ron Enter0003" x="10" y="763" width="1280" height="743"/>
+	<SubTexture name="Ron Enter0004" x="10" y="1516" width="1280" height="743"/>
+	<SubTexture name="Ron Enter0005" x="10" y="1516" width="1280" height="743"/>
 </TextureAtlas>

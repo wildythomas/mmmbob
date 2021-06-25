@@ -1,17 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="gloopBobPortrait.png">
-	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Bob Enter0000" x="10" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0001" x="10" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0002" x="411" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0003" x="411" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0004" x="812" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0005" x="812" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0006" x="1213" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0007" x="1213" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0008" x="1614" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0009" x="1614" y="10" width="391" height="405"/>
-	<SubTexture name="Bob Enter0010" x="10" y="425" width="391" height="405"/>
-	<SubTexture name="Bob Enter0011" x="10" y="425" width="391" height="405"/>
+	<SubTexture name="Bob Enter0000" x="10" y="10" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0001" x="1300" y="10" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0002" x="2590" y="10" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0003" x="10" y="764" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0004" x="1300" y="764" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0005" x="2590" y="764" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0006" x="2590" y="764" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0007" x="2590" y="764" width="1280" height="744"/>
+	<SubTexture name="Bob Enter0008" x="2590" y="764" width="1280" height="744"/>
 </TextureAtlas>
