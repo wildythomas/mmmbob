@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bfPortraitExpressions.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Boyfriend portrait enter sad0000" x="2560" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0001" x="0" y="1488" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0002" x="0" y="0" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0003" x="1280" y="0" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0004" x="2560" y="0" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0005" x="0" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0006" x="1280" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0007" x="1280" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0008" x="1280" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0009" x="1280" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter sad0010" x="1280" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0000" x="2560" y="744" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0001" x="0" y="1488" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0002" x="1280" y="1488" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0003" x="2560" y="1488" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0004" x="0" y="2232" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0005" x="1280" y="2232" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0006" x="2560" y="2232" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0007" x="2560" y="2232" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0008" x="2560" y="2232" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0009" x="2560" y="2232" width="1280" height="744"/>
+	<SubTexture name="Boyfriend portrait enter shocked0010" x="2560" y="2232" width="1280" height="744"/>
+</TextureAtlas>

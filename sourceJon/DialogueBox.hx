@@ -31,6 +31,7 @@ class DialogueBox extends FlxSpriteGroup
 
 	var portraitLeft:FlxSprite;
 	var portraitRight:FlxSprite;
+	var portraitRightBF:FlxSprite;
 	var portraitRightGF:FlxSprite;
 
 	var handSelect:FlxSprite;
@@ -181,13 +182,20 @@ class DialogueBox extends FlxSpriteGroup
 
 		portraitRight = new FlxSprite(0, 0);
 		portraitRight.frames = Paths.getSparrowAtlas('bob/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.animation.addByPrefix('enterSad', 'Boyfriend portrait enter sad', 24, false);
-		portraitRight.animation.addByPrefix('enterShocked', 'Boyfriend portrait enter shocked', 24, false);
+		portraitRight.animation.addByPrefix('enterNormal', 'Boyfriend portrait enter', 24, false);
 		portraitRight.updateHitbox();
 		portraitRight.scrollFactor.set();
 		add(portraitRight);
 		portraitRight.visible = false;
+
+		portraitRightBF = new FlxSprite(0, 0);
+		portraitRightBF.frames = Paths.getSparrowAtlas('bob/bfPortraitExpressions');
+		portraitRightBF.animation.addByPrefix('enterSad', 'Boyfriend portrait enter sad', 24, false);
+		portraitRightBF.animation.addByPrefix('enterShocked', 'Boyfriend portrait enter shocked', 24, false);
+		portraitRightBF.updateHitbox();
+		portraitRightBF.scrollFactor.set();
+		add(portraitRightBF);
+		portraitRightBF.visible = false;
 
 		portraitRightGF = new FlxSprite(0, 0);
 		portraitRightGF.frames = Paths.getSparrowAtlas('bob/WOOOOAH');
@@ -285,6 +293,7 @@ class DialogueBox extends FlxSpriteGroup
 							bgFade.alpha -= 1 / 5 * 0.7;
 							portraitLeft.visible = false;
 							portraitRight.visible = false;
+							portraitRightBF.visible = false;
 							portraitRightGF.visible = false;
 							swagDialogue.alpha -= 1 / 5;
 							dropText.alpha = swagDialogue.alpha;
@@ -324,6 +333,7 @@ class DialogueBox extends FlxSpriteGroup
 			box.animation.play('bobCRUSH');
 			portraitLeft.visible = false;
 			portraitRight.visible = false;
+			portraitRightBF.visible = false;
 			portraitRightGF.visible = false;
 			trace(dialogueList[0]);
 			new FlxTimer().start(0.6, function(tmr:FlxTimer)
@@ -347,6 +357,7 @@ class DialogueBox extends FlxSpriteGroup
 			{
 				case 'doodoofartasslol':
 					portraitRight.visible = false;
+					portraitRightBF.visible = false;
 					portraitLeft.visible = false;
 					if (!portraitRightGF.visible)
 					{
@@ -355,36 +366,40 @@ class DialogueBox extends FlxSpriteGroup
 				}
 				case 'dad':
 					portraitRightGF.visible = false;
+					portraitRightBF.visible = false;
 					portraitRight.visible = false;
 					if (!portraitLeft.visible)
 					{
 						portraitLeft.visible = true;
 						portraitLeft.animation.play('enter');
-				}
+					}
 				case 'bf':
 					portraitRightGF.visible = false;
+					portraitRightBF.visible = false;
 					portraitLeft.visible = false;
 					if (!portraitRight.visible)
 					{
 						portraitRight.visible = true;
-						portraitRight.animation.play('enter');
+						portraitRight.animation.play('enterNormal');
 					}
 				case 'bfsad':
 					portraitRightGF.visible = false;
+					portraitRight.visible = false;
 					portraitLeft.visible = false;
-					if (!portraitRight.visible)
+					if (!portraitRightBF.visible)
 					{
-						portraitRight.visible = true;
-						portraitRight.animation.play('enterSad');
+						portraitRightBF.visible = true;
+						portraitRightBF.animation.play('enterSad');
 					}
 				case 'bfshocked':
-						portraitRightGF.visible = false;
-						portraitLeft.visible = false;
-						if (!portraitRight.visible)
-						{
-							portraitRight.visible = true;
-							portraitRight.animation.play('enterShocked');
-						}
+					portraitRightGF.visible = false;
+					portraitRight.visible = false;
+					portraitLeft.visible = false;
+					if (!portraitRightBF.visible)
+					{
+						portraitRightBF.visible = true;
+						portraitRightBF.animation.play('enterShocked');
+					}
 			}
 		}
 	}
