@@ -311,6 +311,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('withered/DumbDialogPhloxMade'));
 			case 'run':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('run/DumbDialogPhloxMade'));
+			case 'ron':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronDialogue'));
 				
 		}
 
@@ -1157,6 +1159,8 @@ class PlayState extends MusicBeatState
 				case 'trouble' :
 					ONSLAUGHTIntro();
 				case 'run':
+					schoolIntro(doof);
+				case 'ron':
 					schoolIntro(doof);
 				default:
 					startCountdown();

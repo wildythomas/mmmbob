@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Spong.png">
+	<!-- Created with Adobe Animate version 19.1.0.349 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Dad idle dance0000" x="0" y="0" width="458" height="466" frameX="-142" frameY="-21" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0001" x="0" y="0" width="458" height="466" frameX="-158" frameY="-32" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0002" x="458" y="0" width="479" height="466" frameX="-153" frameY="-10" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0003" x="937" y="0" width="457" height="483" frameX="-151" frameY="-10" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0004" x="0" y="483" width="657" height="466" frameX="0" frameY="-25" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0005" x="0" y="0" width="458" height="466" frameX="-169" frameY="-25" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0006" x="657" y="483" width="485" height="487" frameX="-145" frameY="-14" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0007" x="1142" y="483" width="457" height="501" frameX="-143" frameY="0" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0008" x="0" y="984" width="476" height="466" frameX="-167" frameY="-27" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0009" x="476" y="984" width="458" height="487" frameX="-157" frameY="0" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0010" x="934" y="984" width="458" height="487" frameX="-158" frameY="-22" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0011" x="1392" y="984" width="562" height="466" frameX="-110" frameY="-35" frameWidth="699" frameHeight="509"/>
+	<SubTexture name="Dad idle dance0012" x="0" y="1471" width="553" height="466" frameX="-146" frameY="-35" frameWidth="699" frameHeight="509"/>
+</TextureAtlas>

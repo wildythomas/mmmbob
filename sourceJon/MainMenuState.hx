@@ -8,6 +8,7 @@ import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
+import flixel.system.FlxSound;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
@@ -23,6 +24,12 @@ using StringTools;
 class MainMenuState extends MusicBeatState
 {
 	var curSelected:Int = 0;
+	var MainMenuSpin:Int = 0;
+	var timer:Float = 0;
+	var secretmusic:FlxSound;
+	var secretguy:FlxSprite;
+	var isguydancing:Bool = false;
+
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
@@ -46,6 +53,10 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		/**if (FlxG.random.bool(4))
+		{
+			GuyAppears(FlxG.random.int(1, 3));
+		}**/
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
@@ -84,6 +95,16 @@ class MainMenuState extends MusicBeatState
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
+		isguydancing = true;
+		if (FlxG.random.bool(4))
+		{
+			MainMenuSpin = FlxG.random.int(1, 3);
+		}
+		if (FlxG.random.bool(4))
+		{
+			isguydancing = true;
+			GuyAppears(FlxG.random.int(1, 3));
+		}
 
 		var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
 
@@ -125,6 +146,21 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		timer = timer + 0.01;
+		for (str in menuItems)
+		{
+			var thisX:Float =  Math.sin(timer * (timer / 10)) / 5;
+			var thisY:Float =  Math.sin(timer * (timer / 20)) / 5;
+			if (str.ID == 1 && MainMenuSpin == 1)
+			{
+				str.angle = str.angle + timer;
+			}
+			if (str.ID == 0 && MainMenuSpin == 2)
+			{
+				str.scale.x = 1 + thisX;
+				str.scale.y = 1 - thisY;
+			}
+		}
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
@@ -159,6 +195,10 @@ class MainMenuState extends MusicBeatState
 				else
 				{
 					selectedSomethin = true;
+					if (isguydancing)
+					{
+						secretmusic.stop();
+					}
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 
 					FlxFlicker.flicker(magenta, 1.1, 0.15, false);
@@ -208,9 +248,60 @@ class MainMenuState extends MusicBeatState
 			spr.screenCenter(X);
 		});
 	}
-
+	function GuyAppears(rando)
+	{
+		if (rando == 1)
+		{
+			secretmusic = new FlxSound().loadEmbedded(Paths.sound('GuyDancing'));
+			secretmusic.looped = true;
+			secretmusic.volume = 0.3;
+			secretguy = new FlxSprite(0, 0);
+			secretguy.frames = Paths.getSparrowAtlas('CoolDance');
+			secretguy.animation.addByPrefix('idle', 'CoolGuy', 24);
+			secretguy.updateHitbox();
+			secretguy.scrollFactor.set();
+			add(secretguy);
+			secretmusic.play();
+			secretguy.animation.play('idle');
+		}
+		if (rando == 2)
+			{
+				secretmusic = new FlxSound().loadEmbedded(Paths.sound('SortingAlgorithm'));
+				secretmusic.looped = true;
+				secretmusic.volume = 0.3;
+				secretguy = new FlxSprite(0, 0);
+				secretguy.frames = Paths.getSparrowAtlas('Sorting');
+				secretguy.animation.addByPrefix('idle', 'Sorting', 24);
+				secretguy.updateHitbox();
+				secretguy.scrollFactor.set();
+				add(secretguy);
+				secretmusic.play();
+				secretguy.animation.play('idle');
+			}
+		if (rando == 3)
+				{
+					secretmusic = new FlxSound().loadEmbedded(Paths.sound('SpongSound'));
+					secretmusic.looped = true;
+					secretmusic.volume = 0.3;
+					secretguy = new FlxSprite(0, 0);
+					secretguy.frames = Paths.getSparrowAtlas('Spong');
+					secretguy.animation.addByPrefix('idle', 'Dad idle dance', 24);
+					secretguy.updateHitbox();
+					secretguy.scrollFactor.set();
+					add(secretguy);
+					secretmusic.play();
+					secretguy.animation.play('idle');
+				}
+	}
 	function changeItem(huh:Int = 0)
 	{
+		for (str in menuItems)
+			{
+				if (str.ID == 3 && MainMenuSpin == 3)
+				{
+					str.scale.x = str.scale.x + 0.1;
+				}
+			}
 		curSelected += huh;
 
 		if (curSelected >= menuItems.length)

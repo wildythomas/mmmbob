@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="CoolDance.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CoolGuy0000" x="10" y="10" width="762" height="629" frameX="0" frameY="0" frameWidth="762" frameHeight="670"/>
+	<SubTexture name="CoolGuy0001" x="782" y="10" width="762" height="648" frameX="0" frameY="0" frameWidth="762" frameHeight="670"/>
+	<SubTexture name="CoolGuy0002" x="10" y="668" width="762" height="670"/>
+	<SubTexture name="CoolGuy0003" x="782" y="668" width="762" height="622" frameX="0" frameY="0" frameWidth="762" frameHeight="670"/>
+	<SubTexture name="CoolGuy0004" x="10" y="1348" width="762" height="644" frameX="0" frameY="0" frameWidth="762" frameHeight="670"/>
+	<SubTexture name="CoolGuy0005" x="782" y="1348" width="762" height="659" frameX="0" frameY="0" frameWidth="762" frameHeight="670"/>
+	<SubTexture name="CoolGuy0006" x="10" y="2017" width="762" height="644" frameX="0" frameY="0" frameWidth="762" frameHeight="670"/>
+	<SubTexture name="CoolGuy0007" x="782" y="2017" width="762" height="645" frameX="0" frameY="0" frameWidth="762" frameHeight="670"/>
+</TextureAtlas>
