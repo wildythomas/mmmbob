@@ -976,7 +976,14 @@ class PlayState extends MusicBeatState
 		// doof.x += 70;
 		// doof.y = FlxG.height * 0.5;
 		doof.scrollFactor.set();
-		doof.finishThing = RonIntro2;
+		if (curSong == 'Ron')
+		{
+			doof.finishThing = RonIntro2;
+		}
+		else
+		{
+			doof.finishThing = startCountdown;
+		}
 
 		Conductor.songPosition = -5000;
 
