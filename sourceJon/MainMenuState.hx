@@ -95,7 +95,6 @@ class MainMenuState extends MusicBeatState
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
-		isguydancing = true;
 		if (FlxG.random.bool(4))
 		{
 			MainMenuSpin = FlxG.random.int(1, 3);
