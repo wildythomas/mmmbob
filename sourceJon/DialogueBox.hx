@@ -9,6 +9,8 @@ import flixel.input.FlxKeyManager;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import flixel.system.FlxSound;
+
 
 using StringTools;
 
@@ -36,6 +38,8 @@ class DialogueBox extends FlxSpriteGroup
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
+
+	var BOOM:FlxSound;
 
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
 	{
@@ -383,6 +387,13 @@ class DialogueBox extends FlxSpriteGroup
 						portraitRight.animation.play('enterNormal');
 					}
 				case 'bfsad':
+					if (BOOM != null && BOOM.playing) {
+						BOOM.stop();
+					}
+	
+					BOOM = new FlxSound().loadEmbedded(Paths.sound('BOOM'));
+					BOOM.play();
+
 					portraitRightGF.visible = false;
 					portraitRight.visible = false;
 					portraitLeft.visible = false;
@@ -390,6 +401,7 @@ class DialogueBox extends FlxSpriteGroup
 					{
 						portraitRightBF.visible = true;
 						portraitRightBF.animation.play('enterSad');
+						FlxG.sound.music.stop();
 					}
 				case 'bfshocked':
 					portraitRightGF.visible = false;
