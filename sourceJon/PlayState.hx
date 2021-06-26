@@ -167,6 +167,7 @@ class PlayState extends MusicBeatState
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
+	var RonTurn:Bool = true;
 
 	var fc:Bool = true;
 
@@ -975,7 +976,7 @@ class PlayState extends MusicBeatState
 		// doof.x += 70;
 		// doof.y = FlxG.height * 0.5;
 		doof.scrollFactor.set();
-		doof.finishThing = startCountdown;
+		doof.finishThing = RonIntro2;
 
 		Conductor.songPosition = -5000;
 
@@ -1161,7 +1162,7 @@ class PlayState extends MusicBeatState
 				case 'run':
 					schoolIntro(doof);
 				case 'ron':
-					schoolIntro(doof);
+					RonIntro(doof);
 				default:
 					startCountdown();
 			}
@@ -1186,6 +1187,47 @@ class PlayState extends MusicBeatState
 
 		super.create();
 	}
+	function RonIntro(?dialogueBox:DialogueBox) 
+	{
+		boyfriend.visible = false;
+		gf.visible = false;
+		dad.visible = false;
+		FlxG.camera.follow(camFollow, LOCKON, 0.04 * (30 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
+		//camFollow.y = boyfriend.getMidpoint().y;
+		camFollow.x = boyfriend.getMidpoint().x;
+		FlxG.camera.fade(FlxColor.BLACK, 1, true, function()
+		{
+			new FlxTimer().start(0.5, function(swagTimer:FlxTimer)
+			{  
+				boyfriend.visible = true;
+				gf.visible = true;
+				new FlxTimer().start(1, function(swagTimer:FlxTimer)
+				{  
+					add(dialogueBox);
+				});
+			});
+		});
+	}
+	function RonIntro2():Void
+		{
+			FlxG.camera.follow(camFollow, LOCKON, 0.04 * (30 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
+			//camFollow.y = boyfriend.getMidpoint().y;
+			camFollow.x = dad.getMidpoint().x;
+			camFollow.y = dad.getMidpoint().y;
+			new FlxTimer().start(1, function(swagTimer:FlxTimer)
+			{  
+				dad.visible = true;
+				new FlxTimer().start(1, function(swagTimer:FlxTimer)
+				{
+					dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronAfterDialogue'));
+					var lol:DialogueBox = new DialogueBox(false, dialogue);
+					lol.scrollFactor.set();
+					lol.finishThing = startCountdown;
+					add(lol);
+					lol.cameras = [camHUD];
+				});
+			});
+		}
 	function ONSLAUGHTIntro() 
 	{
 		camHUD.visible = false;
@@ -1228,10 +1270,10 @@ class PlayState extends MusicBeatState
 				{
 					remove(bobTransforms);
 					FlxG.camera.fade(FlxColor.BLACK, 0.5, true, function()
-						{
-							camHUD.visible = true;
-							startCountdown();
-						}, true);
+					{
+						camHUD.visible = true;
+						startCountdown();
+					}, true);
 				});
 		}
 	function schoolIntro(?dialogueBox:DialogueBox):Void
@@ -2039,7 +2081,6 @@ class PlayState extends MusicBeatState
 		#if !debug
 		perfectMode = false;
 		#end
-
 		if (currentFrames == FlxG.save.data.fpsCap)
 		{
 			for(i in 0...notesHitArray.length)
