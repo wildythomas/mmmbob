@@ -976,7 +976,7 @@ class PlayState extends MusicBeatState
 		// doof.x += 70;
 		// doof.y = FlxG.height * 0.5;
 		doof.scrollFactor.set();
-		if (curSong == 'Ron')
+		if (SONG.song.toLowerCase() == 'ron')
 		{
 			doof.finishThing = RonIntro2;
 		}
