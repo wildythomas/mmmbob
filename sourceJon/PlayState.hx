@@ -1208,6 +1208,7 @@ class PlayState extends MusicBeatState
 			{  
 				boyfriend.visible = true;
 				gf.visible = true;
+				FlxG.sound.play(Paths.sound('pop'));
 				new FlxTimer().start(1, function(swagTimer:FlxTimer)
 				{  
 					add(dialogueBox);
@@ -1224,6 +1225,7 @@ class PlayState extends MusicBeatState
 			new FlxTimer().start(1, function(swagTimer:FlxTimer)
 			{  
 				dad.visible = true;
+				FlxG.sound.play(Paths.sound('pop'));
 				new FlxTimer().start(1, function(swagTimer:FlxTimer)
 				{
 					dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronAfterDialogue'));
