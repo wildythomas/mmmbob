@@ -32,6 +32,7 @@ class DialogueBox extends FlxSpriteGroup
 	public var finishThing:Void->Void;
 
 	var portraitLeft:FlxSprite;
+	var portraitGloopy:FlxSprite;
 	var portraitRight:FlxSprite;
 	var portraitRightBF:FlxSprite;
 	var portraitRightGF:FlxSprite;
@@ -129,7 +130,14 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		this.dialogueList = dialogueList;
-		
+		portraitGloop = new FlxSprite(-20, 40);
+		portraitGloop.frames = Paths.getSparrowAtlas('bob/gloopBobPortrait');
+		portraitGloop.animation.addByPrefix('enter', 'Bob Enter', 24, false);
+		portraitGloop.setGraphicSize(Std.int(portraitGloop.width * PlayState.daPixelZoom * 0.9));
+		portraitGloop.updateHitbox();
+		portraitGloop.scrollFactor.set();
+		add(portraitGloop);
+		portraitGloop.visible = false;
 		if (!hasDialog)
 			return;
 		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
@@ -173,16 +181,16 @@ class DialogueBox extends FlxSpriteGroup
 			add(portraitLeft);
 			portraitLeft.visible = false;
 		}
-		if (PlayState.SONG.song.toLowerCase() == 'ron')
-			{
-				portraitLeft = new FlxSprite(0, 0);
-				portraitLeft.frames = Paths.getSparrowAtlas('bob/ronPortrait');
-				portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
-				portraitLeft.updateHitbox();
-				portraitLeft.scrollFactor.set();
-				add(portraitLeft);
-				portraitLeft.visible = false;
-			}
+		if (PlayState.SONG.song.toLowerCase() == 'ron' || PlayState.SONG.song.toLowerCase() == 'trouble')
+		{
+			portraitLeft = new FlxSprite(0, 0);
+			portraitLeft.frames = Paths.getSparrowAtlas('bob/ronPortrait');
+			portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
+			portraitLeft.updateHitbox();
+			portraitLeft.scrollFactor.set();
+			add(portraitLeft);
+			portraitLeft.visible = false;
+		}
 
 		portraitRight = new FlxSprite(0, 0);
 		portraitRight.frames = Paths.getSparrowAtlas('bob/bfPortrait');
@@ -219,6 +227,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
+		portraitGloop.screenCenter(X);
 
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 		add(handSelect);
@@ -296,6 +305,7 @@ class DialogueBox extends FlxSpriteGroup
 							box.alpha -= 1 / 5;
 							bgFade.alpha -= 1 / 5 * 0.7;
 							portraitLeft.visible = false;
+							portraitGloop.visible = false;
 							portraitRight.visible = false;
 							portraitRightBF.visible = false;
 							portraitRightGF.visible = false;
@@ -336,6 +346,7 @@ class DialogueBox extends FlxSpriteGroup
 			caniskip == false;
 			box.animation.play('bobCRUSH');
 			portraitLeft.visible = false;
+			portraitGloop.visible = false;
 			portraitRight.visible = false;
 			portraitRightBF.visible = false;
 			portraitRightGF.visible = false;
@@ -363,6 +374,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.visible = false;
 					portraitRightBF.visible = false;
 					portraitLeft.visible = false;
+					portraitGloop.visible = false;
 					if (!portraitRightGF.visible)
 					{
 						portraitRightGF.visible = true;
@@ -372,6 +384,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRightGF.visible = false;
 					portraitRightBF.visible = false;
 					portraitRight.visible = false;
+					portraitGloop.visible = false;
 					if (!portraitLeft.visible)
 					{
 						portraitLeft.visible = true;
@@ -381,6 +394,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRightGF.visible = false;
 					portraitRightBF.visible = false;
 					portraitLeft.visible = false;
+					portraitGloop.visible = false;
 					if (!portraitRight.visible)
 					{
 						portraitRight.visible = true;
@@ -397,6 +411,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRightGF.visible = false;
 					portraitRight.visible = false;
 					portraitLeft.visible = false;
+					portraitGloop.visible = false;
 					if (!portraitRightBF.visible)
 					{
 						portraitRightBF.visible = true;
@@ -407,10 +422,20 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRightGF.visible = false;
 					portraitRight.visible = false;
 					portraitLeft.visible = false;
+					portraitGloop.visible = false;
 					if (!portraitRightBF.visible)
 					{
 						portraitRightBF.visible = true;
 						portraitRightBF.animation.play('enterShocked');
+					}
+				case 'gloopBob':
+					portraitRightGF.visible = false;
+					portraitRight.visible = false;
+					portraitLeft.visible = false;
+					if (!portraitGloop.visible)
+					{
+						portraitGloop.visible = true;
+						portraitGloop.animation.play('enter');
 					}
 			}
 		}

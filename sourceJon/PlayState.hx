@@ -314,6 +314,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('run/DumbDialogPhloxMade'));
 			case 'ron':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronDialogue'));
+			case 'ron':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('trouble/assfart'));
 				
 		}
 
@@ -1164,8 +1166,8 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'withered':
 					schoolIntro(doof);
-				case 'trouble' :
-					ONSLAUGHTIntro();
+				case 'trouble':
+					ONSLAUGHTIntro(doof);
 				case 'run':
 					schoolIntro(doof);
 				case 'ron':
@@ -1237,7 +1239,7 @@ class PlayState extends MusicBeatState
 				});
 			});
 		}
-	function ONSLAUGHTIntro() 
+	function ONSLAUGHTIntro(?dialogueBox:DialogueBox):Void
 	{
 		camHUD.visible = false;
 		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
@@ -1257,7 +1259,7 @@ class PlayState extends MusicBeatState
 				FlxG.camera.fade(FlxColor.BLACK, 1, true, function()
 					{
 						camHUD.visible = true;
-						startCountdown();
+						add(dialogueBox);
 					}, true);
 			});
 	}
