@@ -136,7 +136,7 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		this.dialogueList = dialogueList;
-		portraitGloop = new FlxSprite(-20, 40);
+		portraitGloop = new FlxSprite();
 		portraitGloop.frames = Paths.getSparrowAtlas('bob/gloopBobPortrait');
 		portraitGloop.animation.addByPrefix('enter', 'Bob Enter', 24, false);
 		portraitGloop.setGraphicSize(Std.int(portraitGloop.width * PlayState.daPixelZoom * 0.9));
