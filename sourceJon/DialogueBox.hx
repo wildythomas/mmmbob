@@ -32,7 +32,7 @@ class DialogueBox extends FlxSpriteGroup
 	public var finishThing:Void->Void;
 
 	var portraitLeft:FlxSprite;
-	var portraitGloopy:FlxSprite;
+	var portraitGloop:FlxSprite;
 	var portraitRight:FlxSprite;
 	var portraitRightBF:FlxSprite;
 	var portraitRightGF:FlxSprite;
@@ -87,6 +87,12 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
 				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 			case 'ron':
+				box = new FlxSprite(0, 0);
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
+				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
+				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
+			case 'trouble':
 				box = new FlxSprite(0, 0);
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');

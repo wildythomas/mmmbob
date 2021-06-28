@@ -95,9 +95,7 @@ class PlayState extends MusicBeatState
 	
 	//thx fnfhd
 	var shootBeats:Array<Int> =    [128, 192, 200, 204, 254, 256, 260, 264, 268, 272, 276, 280, 284, 336, 338, 340, 342, 344, 346, 348, 351];
-	var shootBeatsPos:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   3,   3,   3,   0,   0,   3,   3,   0];
-	var shootBeatsEasy:Array<Int> =    [128, 192, 200, 204, 254, 256, 260, 264, 268, 272, 276, 284, 338, 342, 346, 351];
-	var shootBeatsPosEasy:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   3,   0,   3,   0];
+	var shootBeatsPos:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   0,   0,   0,   3,   3,   0,   0,   3];
 	var DoIHit:Bool = true;
 	var IsNoteSpinning:Bool = false;
 	var SpinAmount:Float = 0;
@@ -314,7 +312,7 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('run/DumbDialogPhloxMade'));
 			case 'ron':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronDialogue'));
-			case 'ron':
+			case 'trouble':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('trouble/assfart'));
 				
 		}
@@ -3935,6 +3933,8 @@ class PlayState extends MusicBeatState
 		}
 		if (curSong.toLowerCase() == 'onslaught' && curBeat == 128 )
 		{
+			windowX = Lib.application.window.x;
+			windowY = Lib.application.window.y;
 			IsNoteSpinning = true;
 			VisibleNotes();
 		}
