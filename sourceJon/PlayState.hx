@@ -96,6 +96,8 @@ class PlayState extends MusicBeatState
 	//thx fnfhd
 	var shootBeats:Array<Int> =    [128, 192, 200, 204, 254, 256, 260, 264, 268, 272, 276, 280, 284, 336, 338, 340, 342, 344, 346, 348, 351];
 	var shootBeatsPos:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   0,   0,   0,   3,   3,   0,   0,   3];
+	var shootBeatsEasy:Array<Int> =    [128, 192, 200, 204, 254, 256, 260, 264, 268, 272, 276, 280, 284, 336, 340, 344, 346, 351];
+	var shootBeatsPosEasy:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   0,   0,   3,   0,   3];
 	var DoIHit:Bool = true;
 	var IsNoteSpinning:Bool = false;
 	var SpinAmount:Float = 0;
