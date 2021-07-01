@@ -37,7 +37,6 @@ class DialogueBox extends FlxSpriteGroup
 	var portraitRightBF:FlxSprite;
 	var portraitRightGF:FlxSprite;
 
-	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
 
 	var BOOM:FlxSound;
@@ -136,10 +135,9 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		this.dialogueList = dialogueList;
-		portraitGloop = new FlxSprite();
+		portraitGloop = new FlxSprite(0, 0);
 		portraitGloop.frames = Paths.getSparrowAtlas('bob/gloopBobPortrait');
 		portraitGloop.animation.addByPrefix('enter', 'Bob Enter', 24, false);
-		portraitGloop.setGraphicSize(Std.int(portraitGloop.width * PlayState.daPixelZoom * 0.9));
 		portraitGloop.updateHitbox();
 		portraitGloop.scrollFactor.set();
 		add(portraitGloop);
@@ -234,10 +232,6 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 		portraitGloop.screenCenter(X);
-
-		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
-		add(handSelect);
-
 
 		if (!talkingRight)
 		{
