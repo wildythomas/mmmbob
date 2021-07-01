@@ -1241,8 +1241,7 @@ class PlayState extends MusicBeatState
 		}
 	function ONSLAUGHTIntro(?dialogueBox:DialogueBox):Void
 	{
-		camHUD.visible = false;
-		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
+		/*
 		var RONDIESIHATERON:FlxSprite = new FlxSprite(600, 400);
 		RONDIESIHATERON.frames = Paths.getSparrowAtlas('bob/cutscene/IHATERON');
 		RONDIESIHATERON.animation.addByPrefix('idle', 'RonDied', 24,false);
@@ -1262,6 +1261,17 @@ class PlayState extends MusicBeatState
 						add(dialogueBox);
 					}, true);
 			});
+		*/
+		
+		camHUD.visible = false;
+
+		FlxG.camera.fade(FlxColor.BLACK, 1, true, function()
+			{
+				camHUD.visible = true;
+				add(dialogueBox);
+			}, true);
+		
+		// TSG TODO!!! MOVE THAT TO A FUCKING UHHHH ENDSONG SHIT OK?
 	}
 	function bobSpookyIntro() 
 		{
@@ -2692,10 +2702,16 @@ class PlayState extends MusicBeatState
 					FlxTransitionableState.skipNextTransOut = true;
 					prevCamFollow = camFollow;
 
+					var tempSong:String = SONG.song.toLowerCase();
+
 					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 					FlxG.sound.music.stop();
 
-					LoadingState.loadAndSwitchState(new PlayState());
+					if (tempSong == 'ron') {
+						LoadingState.loadAndSwitchState(new VideoState(Paths.video('ronEndCutscene'), new PlayState()));
+					} else {
+						LoadingState.loadAndSwitchState(new PlayState());
+					}
 				}
 			}
 			else
