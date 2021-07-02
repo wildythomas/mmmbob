@@ -317,7 +317,7 @@ class PlayState extends MusicBeatState
 			case 'trouble':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('trouble/assfart'));
 			case 'onslaught':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('onslaught/onslaughtDialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('onslaught/help'));
 				
 		}
 
@@ -1168,6 +1168,37 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'withered':
 					schoolIntro(doof);
+				case 'onslaught':
+					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+					add(blackScreen);
+					blackScreen.scrollFactor.set();
+					camHUD.visible = false;
+
+					new FlxTimer().start(0.1, function(tmr:FlxTimer)
+					{
+						remove(blackScreen);
+						FlxG.sound.play(Paths.sound('Lights_Turn_On'));
+						camFollow.x = dad.getMidpoint().x;
+						camFollow.y = dad.getMidpoint().y;
+						FlxG.camera.focusOn(camFollow.getPosition());
+						FlxG.camera.zoom = 1.5;
+
+						new FlxTimer().start(0.8, function(tmr:FlxTimer)
+						{
+							camHUD.visible = true;
+							remove(blackScreen);
+							FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
+								ease: FlxEase.quadInOut,
+								onComplete: function(twn:FlxTween)
+								{
+									var lol:DialogueBox = new DialogueBox(false, dialogue);
+									lol.scrollFactor.set();
+									lol.finishThing = startCountdown;
+									add(lol);
+								}
+							});
+						});
+					});
 				case 'trouble':
 					ONSLAUGHTIntro(doof);
 				case 'run':
