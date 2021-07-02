@@ -97,6 +97,12 @@ class DialogueBox extends FlxSpriteGroup
 				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
 				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
 				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
+			case 'onslaught':
+				box = new FlxSprite(0, 0);
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
+				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
+				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 			case 'withered':
 				box = new FlxSprite(0, 0);
 				hasDialog = true;
@@ -135,13 +141,26 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		this.dialogueList = dialogueList;
-		portraitGloop = new FlxSprite(0, 0);
-		portraitGloop.frames = Paths.getSparrowAtlas('bob/gloopBobPortrait');
-		portraitGloop.animation.addByPrefix('enter', 'Bob Enter', 24, false);
-		portraitGloop.updateHitbox();
-		portraitGloop.scrollFactor.set();
-		add(portraitGloop);
-		portraitGloop.visible = false;
+		if (PlayState.SONG.song.toLowerCase() == 'onslaught')
+		{
+			portraitGloop = new FlxSprite(0, 0);
+			portraitGloop.frames = Paths.getSparrowAtlas('bob/glitchedBobPortrait');
+			portraitGloop.animation.addByPrefix('enter', 'Bob Enter', 24, false);
+			portraitGloop.updateHitbox();
+			portraitGloop.scrollFactor.set();
+			add(portraitGloop);
+			portraitGloop.visible = false;
+		}
+		else
+		{
+			portraitGloop = new FlxSprite(0, 0);
+			portraitGloop.frames = Paths.getSparrowAtlas('bob/gloopBobPortrait');
+			portraitGloop.animation.addByPrefix('enter', 'Bob Enter', 24, false);
+			portraitGloop.updateHitbox();
+			portraitGloop.scrollFactor.set();
+			add(portraitGloop);
+			portraitGloop.visible = false;
+		}
 		if (!hasDialog)
 			return;
 		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
@@ -361,6 +380,14 @@ class DialogueBox extends FlxSpriteGroup
 					caniskip == true;
 				});
 			});
+		}
+		if (dialogueList[0] == 'Look in your browser.' && curCharacter == 'gloopBob')
+		{
+			#if linux
+				Sys.command('/usr/bin/xdg-open', ['https://ayetsg.github.io/img/bob_says_fuck_you.jpg', "&"]);
+			#else
+				FlxG.openURL('https://ayetsg.github.io/img/bob_says_fuck_you.jpg');
+			#end
 		}
 		else
 		{

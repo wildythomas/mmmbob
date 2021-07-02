@@ -316,6 +316,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronDialogue'));
 			case 'trouble':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('trouble/assfart'));
+			case 'onslaught':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('onslaught/onslaughtDialogue'));
 				
 		}
 
