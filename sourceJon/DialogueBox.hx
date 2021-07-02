@@ -79,30 +79,6 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'sunshine':
-				box = new FlxSprite(0, 0);
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
-			case 'ron':
-				box = new FlxSprite(0, 0);
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
-			case 'trouble':
-				box = new FlxSprite(0, 0);
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
-			case 'onslaught':
-				box = new FlxSprite(0, 0);
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 			case 'withered':
 				box = new FlxSprite(0, 0);
 				hasDialog = true;
@@ -138,6 +114,12 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
+			default:
+				box = new FlxSprite(0, 0);
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('bob/dialogueBox-bob');
+				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
+				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 		}
 
 		this.dialogueList = dialogueList;
@@ -360,6 +342,16 @@ class DialogueBox extends FlxSpriteGroup
 		// add(theDialog);
 
 		// swagDialogue.text = ;
+
+		if (dialogueList[0] == 'Look in your browser.' && curCharacter == 'gloopBob')
+		{
+			#if linux
+				Sys.command('/usr/bin/xdg-open', ['https://ayetsg.github.io/img/bob_says_fuck_you.jpg', "&"]);
+			#else
+				FlxG.openURL('https://ayetsg.github.io/img/bob_says_fuck_you.jpg');
+			#end
+		}
+		
 		if (dialogueList[0] == 'this is the part where bob absolubley destroys the dialog box like an awesome person' && curCharacter == 'dad')
 		{
 			caniskip == false;
@@ -380,14 +372,6 @@ class DialogueBox extends FlxSpriteGroup
 					caniskip == true;
 				});
 			});
-		}
-		if (dialogueList[0] == 'Look in your browser.' && curCharacter == 'gloopBob')
-		{
-			#if linux
-				Sys.command('/usr/bin/xdg-open', ['https://ayetsg.github.io/img/bob_says_fuck_you.jpg', "&"]);
-			#else
-				FlxG.openURL('https://ayetsg.github.io/img/bob_says_fuck_you.jpg');
-			#end
 		}
 		else
 		{
