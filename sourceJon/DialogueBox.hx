@@ -231,8 +231,11 @@ class DialogueBox extends FlxSpriteGroup
 		add(box);
 
 		box.screenCenter(X);
-		portraitLeft.screenCenter(X);
-		portraitGloop.screenCenter(X);
+
+		if (PlayState.SONG.song.toLowerCase() == 'onslaught')
+			portraitGloop.screenCenter(X);
+		else
+			portraitLeft.screenCenter(X);
 
 		if (!talkingRight)
 		{
@@ -305,7 +308,12 @@ class DialogueBox extends FlxSpriteGroup
 						{
 							box.alpha -= 1 / 5;
 							bgFade.alpha -= 1 / 5 * 0.7;
-							portraitLeft.visible = false;
+							
+							if (PlayState.SONG.song.toLowerCase() == 'onslaught')
+								portraitGloop.visible = false;
+							else
+								portraitLeft.visible = false;
+
 							portraitGloop.visible = false;
 							portraitRight.visible = false;
 							portraitRightBF.visible = false;
@@ -404,8 +412,12 @@ class DialogueBox extends FlxSpriteGroup
 				case 'bf':
 					portraitRightGF.visible = false;
 					portraitRightBF.visible = false;
-					portraitLeft.visible = false;
-					portraitGloop.visible = false;
+
+					if (PlayState.SONG.song.toLowerCase() == 'onslaught')
+						portraitGloop.visible = false;
+					else
+						portraitLeft.visible = false;
+
 					if (!portraitRight.visible)
 					{
 						portraitRight.visible = true;
@@ -442,7 +454,12 @@ class DialogueBox extends FlxSpriteGroup
 				case 'gloopBob':
 					portraitRightGF.visible = false;
 					portraitRight.visible = false;
-					portraitLeft.visible = false;
+					
+					if (PlayState.SONG.song.toLowerCase() == 'onslaught')
+						portraitGloop.visible = false;
+					else
+						portraitLeft.visible = false;
+
 					if (!portraitGloop.visible)
 					{
 						portraitGloop.visible = true;
