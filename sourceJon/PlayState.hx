@@ -605,7 +605,7 @@ class PlayState extends MusicBeatState
 			}
 			
 			//phlox is a little baby
-			case 'run' :
+			case 'run' | 'run-remix-because-its-cool' :
 			{
 				curStage = 'hellstage';
 				if (FlxG.save.data.happybob)
@@ -1177,7 +1177,7 @@ class PlayState extends MusicBeatState
 					new FlxTimer().start(0.1, function(tmr:FlxTimer)
 					{
 						remove(blackScreen);
-						FlxG.sound.play(Paths.sound('Lights_Turn_On'));
+						FlxG.sound.play(Paths.sound('Bob_Appear'));
 						camFollow.x = dad.getMidpoint().x;
 						camFollow.y = dad.getMidpoint().y;
 						FlxG.camera.focusOn(camFollow.getPosition());
@@ -1195,6 +1195,7 @@ class PlayState extends MusicBeatState
 									lol.scrollFactor.set();
 									lol.finishThing = startCountdown;
 									add(lol);
+									lol.cameras = [camHUD];
 								}
 							});
 						});
