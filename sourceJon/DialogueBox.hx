@@ -351,7 +351,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		// swagDialogue.text = ;
 
-		if (dialogueList[0] == 'Look in your browser.' && curCharacter == 'gloopBob')
+		if (dialogueList[0] == '....' && curCharacter == 'gloopBob')
 		{
 			#if linux
 				Sys.command('/usr/bin/xdg-open', ['https://ayetsg.github.io/img/bob_says_fuck_you.jpg', "&"]);
