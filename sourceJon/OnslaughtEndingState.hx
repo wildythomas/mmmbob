@@ -10,7 +10,7 @@ import flixel.util.FlxTimer;
  * ...
  * i took this code from pompom im sorry
  */
-class EndingState extends FlxState
+class OnslaughtEndingState extends FlxState
 {
 
 	public static var SONG:SwagSong;
@@ -46,31 +46,31 @@ class EndingState extends FlxState
 			new FlxTimer().start(3, function(deadTime:FlxTimer)
 			{
 				add(texty);
-				texty.text = "thats odd.";
+				texty.text = "...";
 				new FlxTimer().start(3, function(deadTime:FlxTimer)
 				{
-					texty.text = "you people weren't meant to pass";
+					texty.text = "alright, i see how it is";
 					new FlxTimer().start(3, function(deadTime:FlxTimer)
 					{
-						texty.text = "especially you..";
+						texty.text = "you win, in this scenario.";
 						new FlxTimer().start(3, function(deadTime:FlxTimer)
 						{
-							texty.text = " ";
+							texty.text = "i have no more tricks here ";
 							new FlxTimer().start(3, function(deadTime:FlxTimer)
 							{
-								texty.text = "i can see you....";
+								texty.text = "all hope is lost for me";
 								new FlxTimer().start(3, function(deadTime:FlxTimer)
 								{
 									texty.text = " ";
 									new FlxTimer().start(3, function(deadTime:FlxTimer)
 									{
-										texty.text = "scared you with that one huh?";
+										texty.text = "maybe ill see you again in the future";
 										new FlxTimer().start(3, function(deadTime:FlxTimer)
 										{
-											texty.text = " ";
+											texty.text = "who knows. ";
 											new FlxTimer().start(3, function(deadTime:FlxTimer)
 											{
-												texty.text = "some day you're gonna forget me.";
+												texty.text = "but rest easy knowing that i’ll be here, watching.";
 												new FlxTimer().start(3, function(deadTime:FlxTimer)
 												{
 													texty.text = "as for me.";
