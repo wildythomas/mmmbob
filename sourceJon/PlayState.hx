@@ -2234,7 +2234,7 @@ class PlayState extends MusicBeatState
 			#end
 			if (SONG.song.toLowerCase() == 'run')
 			{
-				FlxG.switchState(new EndingState());
+				FlxG.switchState(new CantRunState());
 			}
 			else
 			{
