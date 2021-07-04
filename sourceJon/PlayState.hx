@@ -2234,12 +2234,20 @@ class PlayState extends MusicBeatState
 			#end
 			if (SONG.song.toLowerCase() == 'run')
 			{
-				FlxG.switchState(new EndingState());
+				FlxG.switchState(new CantRunState());
 			}
 			else
 			{
 				FlxG.switchState(new ChartingState());
 			}
+			if (SONG.song.toLowerCase() == 'onslaught')
+				{
+					FlxG.switchState(new CantRunState());
+				}
+				else
+				{
+					FlxG.switchState(new ChartingState());
+				}
 		}
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
@@ -2696,6 +2704,27 @@ class PlayState extends MusicBeatState
 
 						// if ()
 					}
+					if (storyPlaylist.length <= 0)
+						{
+							if (curSong == "onslaught" && storyDifficulty == 1)
+							{
+								FlxG.switchState(new OnslaughtEndingState());
+							}
+							else if (curSong == "onslaught" && storyDifficulty == 2)
+							{
+								FlxG.switchState(new OnslaughtEndingState());
+							}
+							else
+							{
+								FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		
+								transIn = FlxTransitionableState.defaultTransIn;
+								transOut = FlxTransitionableState.defaultTransOut;
+		
+								FlxG.switchState(new StoryMenuState());
+		
+								// if ()
+							}
 					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
 
 					if (SONG.validScore)
@@ -2755,6 +2784,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 	}
+}
 
 
 	var endingSong:Bool = false;
