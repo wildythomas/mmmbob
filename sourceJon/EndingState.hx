@@ -12,7 +12,6 @@ import flixel.util.FlxTimer;
  */
 class EndingState extends FlxState
 {
-	var crash:Bool = false;
 	public function new(goodEnding:Bool = true) 
 	{
 		super();
@@ -35,7 +34,7 @@ class EndingState extends FlxState
 		bobissssssss.animation.addByPrefix('scaryidle', 'scary', 24, false);
 		bobissssssss.antialiasing = true;
 		FlxG.sound.playMusic(Paths.music("youcantrun"),0);
-		add(texty);
+		/*add(texty);
 		new FlxTimer().start(4, function(deadTime:FlxTimer)
 		{
 			var dialognumber:Int = 0;
@@ -68,9 +67,9 @@ class EndingState extends FlxState
 				}
 				dialognumber = dialognumber + 1;
 			}, 11);
-		});
+		});*/
 		//please dont look at this god awful code
-		/*new FlxTimer().start(4, function(deadTime:FlxTimer)
+		new FlxTimer().start(4, function(deadTime:FlxTimer)
 		{
 			FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),1);
 			add(bobissssssss);
@@ -118,11 +117,6 @@ class EndingState extends FlxState
 															neverforget.text = "I L L  N E V E R  F O R G E T  Y O U";
 															new FlxTimer().start(3, function(deadTime:FlxTimer)
 															{
-																#if linux
-																	Sys.command('/usr/bin/xdg-open', ["https://media.discordapp.net/attachments/438357829892571138/845281215241125928/unknown.png?width=676&height=676", "&"]);
-																#else
-																	FlxG.openURL('https://media.discordapp.net/attachments/438357829892571138/845281215241125928/unknown.png?width=676&height=676');
-																#end
 																Sys.exit(0);
 															});
 														});
@@ -137,18 +131,12 @@ class EndingState extends FlxState
 					});
 				});
 			});
-		});*/
+		});
 		
 	}
 	override public function update(elapsed:Float):Void 
 	{
 		super.update(elapsed);
-		if (crash == true)
-		{
-			var CRASH:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bob/20215211567'));
-			add(CRASH);
-			//trace("SCARY AAAH!!!!!!!!!!!!!!!!!!!!!!!!!");
-		}
 	}
 	
 }
