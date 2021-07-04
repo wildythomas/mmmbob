@@ -12,9 +12,6 @@ import flixel.util.FlxTimer;
  */
 class OnslaughtEndingState extends FlxState
 {
-
-	public static var SONG:SwagSong;
-	
 	public function new(goodEnding:Bool = true) 
 	{
 		super();
@@ -23,9 +20,9 @@ class OnslaughtEndingState extends FlxState
 	
 	override public function create():Void 
 	{
-		trace(SONG.song);
 		super.create();
 		var texty:FlxText;
+		var dialogue:Array<String> = ["thats odd.", "you people weren't meant to pass", "especially you..", " ", "i can see you...."," ","scared you with that one huh?"," ","some day you're gonna forget me.","as for me.","I L L  N E V E R  F O R G E T  Y O U"];
 		texty = new FlxUIText(532,550, 0, "");
 		texty.setFormat("Arial", 30, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		var neverforget:FlxText;
@@ -37,6 +34,40 @@ class OnslaughtEndingState extends FlxState
 		bobissssssss.animation.addByPrefix('scaryidle', 'scary', 24, false);
 		bobissssssss.antialiasing = true;
 		FlxG.sound.playMusic(Paths.music("youcantrun"),0);
+		/*add(texty);
+		new FlxTimer().start(4, function(deadTime:FlxTimer)
+		{
+			var dialognumber:Int = 0;
+			var textdialog:String;
+			FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),1);
+			add(bobissssssss);
+			bobissssssss.animation.play('idle');
+			new FlxTimer().start(3, function(tmr:FlxTimer)
+			{
+				if (textdialog == "I L L  N E V E R  F O R G E T  Y O U")
+				{
+					FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),0);
+					remove(texty);
+					bobissssssss.animation.play('scaryidle');
+					//bobissssssss.play('scaryidle');
+					new FlxTimer().start(4, function(deadTime:FlxTimer)
+					{
+						add(neverforget);
+						neverforget.text = "I L L  N E V E R  F O R G E T  Y O U";
+						new FlxTimer().start(3, function(deadTime:FlxTimer)
+						{
+							crash = true;
+						});
+					});
+				}
+				else
+				{
+					textdialog = dialogue[dialognumber];
+					texty.text = textdialog;
+				}
+				dialognumber = dialognumber + 1;
+			}, 11);
+		});*/
 		//please dont look at this god awful code
 		new FlxTimer().start(4, function(deadTime:FlxTimer)
 		{
@@ -46,31 +77,31 @@ class OnslaughtEndingState extends FlxState
 			new FlxTimer().start(3, function(deadTime:FlxTimer)
 			{
 				add(texty);
-				texty.text = "...";
+				texty.text = "thats odd.";
 				new FlxTimer().start(3, function(deadTime:FlxTimer)
 				{
-					texty.text = "alright, i see how it is";
+					texty.text = "you people weren't meant to pass";
 					new FlxTimer().start(3, function(deadTime:FlxTimer)
 					{
-						texty.text = "you win, in this scenario.";
+						texty.text = "especially you..";
 						new FlxTimer().start(3, function(deadTime:FlxTimer)
 						{
-							texty.text = "i have no more tricks here ";
+							texty.text = " ";
 							new FlxTimer().start(3, function(deadTime:FlxTimer)
 							{
-								texty.text = "all hope is lost for me";
+								texty.text = "i can see you....";
 								new FlxTimer().start(3, function(deadTime:FlxTimer)
 								{
 									texty.text = " ";
 									new FlxTimer().start(3, function(deadTime:FlxTimer)
 									{
-										texty.text = "maybe ill see you again in the future";
+										texty.text = "scared you with that one huh?";
 										new FlxTimer().start(3, function(deadTime:FlxTimer)
 										{
-											texty.text = "who knows. ";
+											texty.text = " ";
 											new FlxTimer().start(3, function(deadTime:FlxTimer)
 											{
-												texty.text = "but rest easy knowing that i’ll be here, watching.";
+												texty.text = "some day you're gonna forget me.";
 												new FlxTimer().start(3, function(deadTime:FlxTimer)
 												{
 													texty.text = "as for me.";
@@ -86,11 +117,6 @@ class OnslaughtEndingState extends FlxState
 															neverforget.text = "I L L  N E V E R  F O R G E T  Y O U";
 															new FlxTimer().start(3, function(deadTime:FlxTimer)
 															{
-																#if linux
-																	Sys.command('/usr/bin/xdg-open', ["https://media.discordapp.net/attachments/438357829892571138/845281215241125928/unknown.png?width=676&height=676", "&"]);
-																#else
-																	FlxG.openURL('https://media.discordapp.net/attachments/438357829892571138/845281215241125928/unknown.png?width=676&height=676');
-																#end
 																Sys.exit(0);
 															});
 														});
@@ -108,11 +134,9 @@ class OnslaughtEndingState extends FlxState
 		});
 		
 	}
-	
 	override public function update(elapsed:Float):Void 
 	{
 		super.update(elapsed);
-		
 	}
 	
 }
