@@ -10,9 +10,11 @@ import flixel.util.FlxTimer;
  * ...
  * i took this code from pompom im sorry
  */
-class EndingState extends FlxState
+class OnslaughtEndingState extends FlxState
 {
-	var crash:Bool = false;
+
+	public static var SONG:SwagSong;
+	
 	public function new(goodEnding:Bool = true) 
 	{
 		super();
@@ -21,9 +23,9 @@ class EndingState extends FlxState
 	
 	override public function create():Void 
 	{
+		trace(SONG.song);
 		super.create();
 		var texty:FlxText;
-		var dialogue:Array<String> = ["thats odd.", "you people weren't meant to pass", "especially you..", " ", "i can see you...."," ","scared you with that one huh?"," ","some day you're gonna forget me.","as for me.","I L L  N E V E R  F O R G E T  Y O U"];
 		texty = new FlxUIText(532,550, 0, "");
 		texty.setFormat("Arial", 30, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		var neverforget:FlxText;
@@ -35,42 +37,8 @@ class EndingState extends FlxState
 		bobissssssss.animation.addByPrefix('scaryidle', 'scary', 24, false);
 		bobissssssss.antialiasing = true;
 		FlxG.sound.playMusic(Paths.music("youcantrun"),0);
-		add(texty);
-		new FlxTimer().start(4, function(deadTime:FlxTimer)
-		{
-			var dialognumber:Int = 0;
-			var textdialog:String;
-			FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),1);
-			add(bobissssssss);
-			bobissssssss.animation.play('idle');
-			new FlxTimer().start(3, function(tmr:FlxTimer)
-			{
-				if (textdialog == "I L L  N E V E R  F O R G E T  Y O U")
-				{
-					FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),0);
-					remove(texty);
-					bobissssssss.animation.play('scaryidle');
-					//bobissssssss.play('scaryidle');
-					new FlxTimer().start(4, function(deadTime:FlxTimer)
-					{
-						add(neverforget);
-						neverforget.text = "I L L  N E V E R  F O R G E T  Y O U";
-						new FlxTimer().start(3, function(deadTime:FlxTimer)
-						{
-							crash = true;
-						});
-					});
-				}
-				else
-				{
-					textdialog = dialogue[dialognumber];
-					texty.text = textdialog;
-				}
-				dialognumber = dialognumber + 1;
-			}, 11);
-		});
 		//please dont look at this god awful code
-		/*new FlxTimer().start(4, function(deadTime:FlxTimer)
+		new FlxTimer().start(4, function(deadTime:FlxTimer)
 		{
 			FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),1);
 			add(bobissssssss);
@@ -78,31 +46,31 @@ class EndingState extends FlxState
 			new FlxTimer().start(3, function(deadTime:FlxTimer)
 			{
 				add(texty);
-				texty.text = "thats odd.";
+				texty.text = "...";
 				new FlxTimer().start(3, function(deadTime:FlxTimer)
 				{
-					texty.text = "you people weren't meant to pass";
+					texty.text = "alright, i see how it is";
 					new FlxTimer().start(3, function(deadTime:FlxTimer)
 					{
-						texty.text = "especially you..";
+						texty.text = "you win, in this scenario.";
 						new FlxTimer().start(3, function(deadTime:FlxTimer)
 						{
-							texty.text = " ";
+							texty.text = "i have no more tricks here ";
 							new FlxTimer().start(3, function(deadTime:FlxTimer)
 							{
-								texty.text = "i can see you....";
+								texty.text = "all hope is lost for me";
 								new FlxTimer().start(3, function(deadTime:FlxTimer)
 								{
 									texty.text = " ";
 									new FlxTimer().start(3, function(deadTime:FlxTimer)
 									{
-										texty.text = "scared you with that one huh?";
+										texty.text = "maybe ill see you again in the future";
 										new FlxTimer().start(3, function(deadTime:FlxTimer)
 										{
-											texty.text = " ";
+											texty.text = "who knows. ";
 											new FlxTimer().start(3, function(deadTime:FlxTimer)
 											{
-												texty.text = "some day you're gonna forget me.";
+												texty.text = "but rest easy knowing that i’ll be here, watching.";
 												new FlxTimer().start(3, function(deadTime:FlxTimer)
 												{
 													texty.text = "as for me.";
@@ -137,18 +105,14 @@ class EndingState extends FlxState
 					});
 				});
 			});
-		});*/
+		});
 		
 	}
+	
 	override public function update(elapsed:Float):Void 
 	{
 		super.update(elapsed);
-		if (crash == true)
-		{
-			var CRASH:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bob/20215211567'));
-			add(CRASH);
-			//trace("SCARY AAAH!!!!!!!!!!!!!!!!!!!!!!!!!");
-		}
+		
 	}
 	
 }
