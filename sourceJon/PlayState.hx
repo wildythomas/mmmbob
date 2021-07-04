@@ -2240,6 +2240,7 @@ class PlayState extends MusicBeatState
 			{
 				FlxG.switchState(new ChartingState());
 			}
+			
 			if (SONG.song.toLowerCase() == 'onslaught')
 				{
 					FlxG.switchState(new CantRunState());
