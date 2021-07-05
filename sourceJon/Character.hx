@@ -619,21 +619,6 @@ class Character extends FlxSprite
 					animation.addByPrefix('singLEFT', 'Left', 29, false);
 					animation.addByPrefix('singRIGHT', 'Right', 29, false);
 					addOffset('idle');
-			case 'tankman':
-				tex = Paths.getSparrowAtlas('littleman/tankmanCaptain');
-				frames = tex;
-				animation.addByPrefix('idle', "Tankman Idle Dance instance 1", 24);
-				animation.addByPrefix('singUP', 'Tankman UP note instance 1', 24, false);
-				animation.addByPrefix('singDOWN', 'Tankman DOWN note instance 1', 24, false);
-				animation.addByPrefix('singLEFT', 'Tankman Note Left instance 1', 24, false);
-				animation.addByPrefix('singRIGHT', 'Tankman Right Note instance 1', 24, false);
-				animation.addByPrefix('singUP-alt', 'TANKMAN UGH instance 1', 24, false);
-				addOffset('idle');
-				addOffset("singUP", 42, 38);
-				addOffset("singLEFT", 98, -27);
-				addOffset("singRIGHT", -89, -51);
-				addOffset("singDOWN", 40, -120);
-				addOffset("singUP-alt", 71, -40);
 		}
 
 		dance();

@@ -22,7 +22,11 @@ class FunState extends FlxState
 		var end:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bob/RUNFUN', 'shared'));
 		FlxG.sound.playMusic(Paths.music("FUNFUNFUNFUNFUN"),1,false);
 		add(end);
-		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);	
+		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
+		
+		
+		new FlxTimer().start(24, endIt);
+		
 	}
 	
 	override public function update(elapsed:Float):Void 
