@@ -114,6 +114,8 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
+			case 'little-man':
+				hasDialog = false;
 			default:
 				box = new FlxSprite(0, 0);
 				hasDialog = true;
