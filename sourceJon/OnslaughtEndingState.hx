@@ -22,7 +22,6 @@ class OnslaughtEndingState extends FlxState
 	{
 		super.create();
 		var texty:FlxText;
-		var dialogue:Array<String> = ["thats odd.", "you people weren't meant to pass", "especially you..", " ", "i can see you...."," ","scared you with that one huh?"," ","some day you're gonna forget me.","as for me.","I L L  N E V E R  F O R G E T  Y O U"];
 		texty = new FlxUIText(532,550, 0, "");
 		texty.setFormat("Arial", 30, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		var neverforget:FlxText;
@@ -77,48 +76,42 @@ class OnslaughtEndingState extends FlxState
 			new FlxTimer().start(3, function(deadTime:FlxTimer)
 			{
 				add(texty);
-				texty.text = "thats odd.";
+				texty.text = "....";
 				new FlxTimer().start(3, function(deadTime:FlxTimer)
 				{
-					texty.text = "you people weren't meant to pass";
+					texty.text = "alright, i see how it is";
 					new FlxTimer().start(3, function(deadTime:FlxTimer)
 					{
-						texty.text = "especially you..";
+						texty.text = "you win, in this scenario";
 						new FlxTimer().start(3, function(deadTime:FlxTimer)
 						{
-							texty.text = " ";
+							texty.text = "i have no more tricks here";
 							new FlxTimer().start(3, function(deadTime:FlxTimer)
 							{
-								texty.text = "i can see you....";
+								texty.text = "all hope is lost for me";
 								new FlxTimer().start(3, function(deadTime:FlxTimer)
 								{
-									texty.text = " ";
+									texty.text = "....";
 									new FlxTimer().start(3, function(deadTime:FlxTimer)
 									{
-										texty.text = "scared you with that one huh?";
+										texty.text = "maybe ill see you again in the future";
 										new FlxTimer().start(3, function(deadTime:FlxTimer)
 										{
-											texty.text = " ";
+											texty.text = "who knows";
 											new FlxTimer().start(3, function(deadTime:FlxTimer)
 											{
-												texty.text = "some day you're gonna forget me.";
+												texty.text = "but rest easy knowing that i'll be here, watching";
 												new FlxTimer().start(3, function(deadTime:FlxTimer)
 												{
-													texty.text = "as for me.";
-													new FlxTimer().start(3, function(deadTime:FlxTimer)
+													FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),0);
+													remove(texty);
+													bobissssssss.animation.play('scaryidle');
+													//bobissssssss.play('scaryidle');
+													new FlxTimer().start(4, function(deadTime:FlxTimer)
 													{
-														FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),0);
-														remove(texty);
-														bobissssssss.animation.play('scaryidle');
-														//bobissssssss.play('scaryidle');
-														new FlxTimer().start(4, function(deadTime:FlxTimer)
+														new FlxTimer().start(3, function(deadTime:FlxTimer)
 														{
-															add(neverforget);
-															neverforget.text = "I L L  N E V E R  F O R G E T  Y O U";
-															new FlxTimer().start(3, function(deadTime:FlxTimer)
-															{
-																Sys.exit(0);
-															});
+															Sys.exit(0);
 														});
 													});
 												});
