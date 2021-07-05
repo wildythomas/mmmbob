@@ -2708,11 +2708,7 @@ class PlayState extends MusicBeatState
 						// if ()
 					}
 
-					if (curSong == "onslaught" && storyDifficulty == 1)
-					{
-						FlxG.switchState(new OnslaughtEndingState());
-					}
-					else if (curSong == "onslaught" && storyDifficulty == 2)
+					if (curSong == "onslaught")
 					{
 						FlxG.switchState(new OnslaughtEndingState());
 					}
