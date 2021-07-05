@@ -301,7 +301,7 @@ class DialogueBox extends FlxSpriteGroup
 					{
 						isEnding = true;
 
-						if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'withered' || PlayState.SONG.song.toLowerCase() == 'run')
+						if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'withered' || PlayState.SONG.song.toLowerCase() == 'run' || PlayState.SONG.song.toLowerCase() == 'withered' || PlayState.SONG.song.toLowerCase() == 'ron')
 							FlxG.sound.music.fadeOut(2.2, 0);
 
 						new FlxTimer().start(0.2, function(tmr:FlxTimer)
