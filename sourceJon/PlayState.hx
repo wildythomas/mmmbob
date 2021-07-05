@@ -2688,11 +2688,7 @@ class PlayState extends MusicBeatState
 
 				if (storyPlaylist.length <= 0)
 				{
-					if (curSong == "run" && storyDifficulty == 1)
-					{
-						FlxG.switchState(new EndingState());
-					}
-					else if (curSong == "run" && storyDifficulty == 2)
+					if (curSong == "run" && storyDifficulty)
 					{
 						FlxG.switchState(new EndingState());
 					}
