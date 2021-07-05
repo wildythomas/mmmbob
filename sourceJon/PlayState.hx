@@ -1255,17 +1255,15 @@ class PlayState extends MusicBeatState
 	function RonIntro2():Void
 		{
 			FlxG.camera.follow(camFollow, LOCKON, 0.04 * (30 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
-			FlxG.sound.music.fadeIn(1, 0.5, 0);
 			//camFollow.y = boyfriend.getMidpoint().y;
 			camFollow.x = dad.getMidpoint().x;
 			camFollow.y = dad.getMidpoint().y;
 			new FlxTimer().start(1, function(swagTimer:FlxTimer)
 			{  
 				dad.visible = true;
-				FlxG.sound.play(Paths.sound('Ron_Appear'));
+				FlxG.sound.play(Paths.sound('pop'));
 				new FlxTimer().start(1, function(swagTimer:FlxTimer)
 				{
-					FlxG.sound.playMusic(Paths.music('Ron_Dialog'), 0.5);
 					dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronAfterDialogue'));
 					var lol:DialogueBox = new DialogueBox(false, dialogue);
 					lol.scrollFactor.set();
@@ -2773,8 +2771,7 @@ class PlayState extends MusicBeatState
 					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 					FlxG.sound.music.stop();
 
-					if (tempSong == 'ron') 
-					{
+					if (tempSong == 'ron') {
 						LoadingState.loadAndSwitchState(new VideoState(Paths.video('ronEndCutscene'), new PlayState()));
 					} else {
 						LoadingState.loadAndSwitchState(new PlayState());
