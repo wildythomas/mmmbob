@@ -2238,19 +2238,14 @@ class PlayState extends MusicBeatState
 			{
 				FlxG.switchState(new CantRunState());
 			}
+			else if (SONG.song.toLowerCase() == 'onslaught')
+			{
+				FlxG.switchState(new CantRunState());
+			}
 			else
 			{
 				FlxG.switchState(new ChartingState());
 			}
-			
-			if (SONG.song.toLowerCase() == 'onslaught')
-				{
-					FlxG.switchState(new CantRunState());
-				}
-				else
-				{
-					FlxG.switchState(new ChartingState());
-				}
 		}
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
@@ -2688,35 +2683,25 @@ class PlayState extends MusicBeatState
 
 				if (storyPlaylist.length <= 0)
 				{
-					if (curSong == "run")
+					trace(curSong);
+
+					if (curSong.toLowerCase() == "run")
 					{
 						FlxG.switchState(new EndingState());
 					}
-					else
-					{
-						FlxG.sound.playMusic(Paths.music('freakyMenu'));
-
-						transIn = FlxTransitionableState.defaultTransIn;
-						transOut = FlxTransitionableState.defaultTransOut;
-
-						FlxG.switchState(new StoryMenuState());
-
-						// if ()
-					}
-
-					if (curSong == "onslaught")
+					else if (curSong.toLowerCase() == "onslaught")
 					{
 						FlxG.switchState(new OnslaughtEndingState());
 					}
 					else
 					{
 						FlxG.sound.playMusic(Paths.music('freakyMenu'));
-	
+
 						transIn = FlxTransitionableState.defaultTransIn;
 						transOut = FlxTransitionableState.defaultTransOut;
-	
+
 						FlxG.switchState(new StoryMenuState());
-	
+
 						// if ()
 					}
 
