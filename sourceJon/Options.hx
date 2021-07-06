@@ -170,7 +170,7 @@ class LimitPopups extends Option
 
 	private override function updateDisplay():String
 	{
-		return "limit popups " + (!FlxG.save.data.limitpopups ? "off" : "on");
+		return "limit popups " + (!FlxG.save.data.limitpopups ? "on" : "off");
 	}
 }
 class ScaryBS extends Option

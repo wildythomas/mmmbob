@@ -3946,7 +3946,7 @@ class PlayState extends MusicBeatState
 		if (curSong.toLowerCase() == 'onslaught' && curBeat >= 128 && curBeat <= 352 )
 		{
 			var amount = curBeat/10;
-			if (!FlxG.save.data.limitpopups)
+			if (FlxG.save.data.limitpopups)
 				amount = amount/2;
 			if (FlxG.random.bool(amount) && appearscreen)
 			{
