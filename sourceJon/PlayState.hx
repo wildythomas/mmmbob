@@ -1801,9 +1801,9 @@ class PlayState extends MusicBeatState
 		var beatStepTime = 600 * (100 / songData.bpm);
 		if (curSong == 'Onslaught')
 		{
-			if (storyDifficulty == 0)
+			if (storyDifficulty == 1)
 			{
-				for (x in 0...shootBeats.length)
+				for (x in 0...shootBeatsEasy.length)
 				{
 
 					var warnNoteTime = shootBeatsEasy[x];
@@ -1824,7 +1824,7 @@ class PlayState extends MusicBeatState
 					warnNote.x += FlxG.width / 2; // general offset
 				}
 			}
-			else
+			else if (storyDifficulty == 2)
 			{
 				for (x in 0...shootBeats.length)
 				{
@@ -3947,7 +3947,7 @@ class PlayState extends MusicBeatState
 		{
 			var amount = curBeat/10;
 			if (FlxG.save.data.limitpopups)
-				amount = amount/2;
+				amount = 0;
 			if (FlxG.random.bool(amount) && appearscreen)
 			{
 				var randomthing:FlxSprite = new FlxSprite(FlxG.random.int(0, 1077), FlxG.random.int(0, 622));

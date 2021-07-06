@@ -30,8 +30,10 @@ class GameOverSubstate extends MusicBeatSubstate
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
 			case 'slaught':
+				stageSuffix = '-BOB';
 				daBf = 'bf-spiked';
 			case 'hellstage':
+				stageSuffix = '-BOB';
 				daBf = 'bf-spiked';
 			default:
 				daBf = 'bf';
@@ -54,10 +56,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		add(bf);
 		camFollow = new FlxObject(bf.getMidpoint().x - 200 ,bf.getMidpoint().y - 100, 1, 1);
 		add(camFollow);
-		if (FlxG.save.data.websiteoption)
-		{
-			FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
-		}
+		FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
 		Conductor.changeBPM(100);
 
 		// FlxG.camera.followLerp = 1;
