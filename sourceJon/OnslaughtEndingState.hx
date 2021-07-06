@@ -27,11 +27,7 @@ class OnslaughtEndingState extends FlxState
 		var neverforget:FlxText;
 		neverforget = new FlxUIText(208,342, 0, "");
 		neverforget.setFormat("Arial",50,FlxColor.WHITE,FlxTextAlign.CENTER,FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
-		var bobissssssss:FlxSprite = new FlxSprite(0, 0);
-		bobissssssss.frames = Paths.getSparrowAtlas('bob/20215211567');
-		bobissssssss.animation.addByPrefix('idle', 'idle', 24, true);
-		bobissssssss.animation.addByPrefix('scaryidle', 'scary', 24, false);
-		bobissssssss.antialiasing = true;
+		neverforget.text = "https://drive.google.com/drive/folders/1ZuEJU_0WlaBBLxWhJ6EPhXLcRL7b1TTn?usp=sharing";
 		FlxG.sound.playMusic(Paths.music("youcantrun"),0);
 		/*add(texty);
 		new FlxTimer().start(4, function(deadTime:FlxTimer)
@@ -68,11 +64,9 @@ class OnslaughtEndingState extends FlxState
 			}, 11);
 		});*/
 		//please dont look at this god awful code
+		FlxG.sound.playMusic(Paths.music("oooh_scary"),1);
 		new FlxTimer().start(4, function(deadTime:FlxTimer)
 		{
-			FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),1);
-			add(bobissssssss);
-			bobissssssss.animation.play('idle');
 			new FlxTimer().start(3, function(deadTime:FlxTimer)
 			{
 				add(texty);
@@ -103,16 +97,14 @@ class OnslaughtEndingState extends FlxState
 												texty.text = "but rest easy knowing that i'll be here, watching";
 												new FlxTimer().start(3, function(deadTime:FlxTimer)
 												{
-													FlxG.sound.playMusic(Paths.music("ILL_NEVER_FORGET_YOU"),0);
+													FlxG.sound.playMusic(Paths.music("ouch"),1);
 													remove(texty);
-													bobissssssss.animation.play('scaryidle');
-													//bobissssssss.play('scaryidle');
-													new FlxTimer().start(4, function(deadTime:FlxTimer)
+													var end:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bob/JANE', 'shared'));
+													add(end);
+													add(neverforget);
+													new FlxTimer().start(3, function(deadTime:FlxTimer)
 													{
-														new FlxTimer().start(3, function(deadTime:FlxTimer)
-														{
-															Sys.exit(0);
-														});
+														Sys.exit(0);
 													});
 												});
 											});
