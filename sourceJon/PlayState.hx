@@ -2684,7 +2684,9 @@ class PlayState extends MusicBeatState
 				if (storyPlaylist.length <= 0)
 				{
 					trace(curSong);
-
+					#if windows
+					DiscordClient.changePresence("HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP", null, null, true);
+					#end
 					if (curSong.toLowerCase() == "run")
 					{
 						FlxG.switchState(new EndingState());
