@@ -13,7 +13,6 @@ class WarningState extends MusicBeatState
 	override function create()
 	{
 		super.create();
-		FlxG.sound.playMusic(Paths.music('BobWarningScreen'), 1);
 		var thx:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('WARNINGSCRENWARNINGSCREN', 'preload'));
 		add(thx);
 	}
