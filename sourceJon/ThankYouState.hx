@@ -15,9 +15,6 @@ class ThankYouState extends MusicBeatState
 		var thx:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bob/thankers', 'shared'));
 		add(thx);
 		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
-
-		FlxG.sound.music.stop();
-		FlxG.sound.playMusic(Paths.music('freakyMenu'));
 	}
 
 	override function update(elapsed:Float)
