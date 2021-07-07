@@ -3945,17 +3945,14 @@ class PlayState extends MusicBeatState
 			}
 		if (curSong.toLowerCase() == 'onslaught' && curBeat >= 128 && curBeat <= 352 )
 		{
-			var amount = curBeat/10;
-			if (FlxG.save.data.limitpopups)
-				amount = 0;
+			var amount = curBeat/20;
 			if (FlxG.random.bool(amount) && appearscreen)
 			{
-				var randomthing:FlxSprite = new FlxSprite(FlxG.random.int(0, 1077), FlxG.random.int(0, 622));
+				var randomthing:FlxSprite = new FlxSprite(FlxG.random.int(300, 1077), FlxG.random.int(0, 622));
 				FlxG.sound.play(Paths.sound("pop_up"), 1);
 				randomthing.loadGraphic(Paths.image('bob/PopUps/popup' + FlxG.random.int(1,11), 'shared'));
 				randomthing.updateHitbox();
 				randomthing.alpha = 0;
-				randomthing.width = 0;
 				randomthing.antialiasing = true;
 				add(randomthing);
 				randomthing.cameras = [camHUD];

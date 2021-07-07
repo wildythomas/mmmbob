@@ -102,7 +102,7 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.random.bool(10))
 		{
 			isguydancing = true;
-			GuyAppears(FlxG.random.int(1, 3));
+			GuyAppears(FlxG.random.int(1, 4));
 		}
 
 		var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
@@ -291,6 +291,20 @@ class MainMenuState extends MusicBeatState
 					secretmusic.play();
 					secretguy.animation.play('idle');
 				}
+		if (rando == 4)
+			{
+				secretmusic = new FlxSound().loadEmbedded(Paths.sound('crazy_little_guy'));
+				secretmusic.looped = true;
+				secretmusic.volume = 0.3;
+				secretguy = new FlxSprite(0, 0);
+				secretguy.frames = Paths.getSparrowAtlas('campaign_menu_UI_characters');
+				secretguy.animation.addByPrefix('idle', 'BOBBY BOBINO BOBBLE menu asset', 60);
+				secretguy.updateHitbox();
+				secretguy.scrollFactor.set();
+				add(secretguy);
+				secretmusic.play();
+				secretguy.animation.play('idle');
+			}
 	}
 	function changeItem(huh:Int = 0)
 	{

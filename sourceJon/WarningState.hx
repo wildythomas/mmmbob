@@ -1,29 +1,27 @@
 package;
-
-import flixel.FlxState;
-import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.FlxSubState;
-import flixel.text.FlxText;
-import flixel.util.FlxColor;
-import lime.app.Application;
+import flixel.*;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+
 
 class WarningState extends FlxState
 {
+
 	public function new() 
 	{
 		super();
 	}
-
-	override public function create()
+	
+	override public function create():Void 
 	{
 		super.create();
+
 		FlxG.sound.playMusic(Paths.music('BobWarningScreen'), 1);
 		var thx:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('WARNINGSCRENWARNINGSCREN', 'preload'));
 		add(thx);
 	}
-
-	public override function update(elapsed:Float)
+	public override function update(elapsed)
 	{
 		if (FlxG.keys.justPressed.ENTER)
 		{
@@ -31,4 +29,5 @@ class WarningState extends FlxState
 		}
 		super.update(elapsed);
 	}
+	
 }
