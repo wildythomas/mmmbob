@@ -8,14 +8,9 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.app.Application;
 
-class WarningState extends FlxState
+class WarningState extends MusicBeatState
 {
-	public function new() 
-	{
-		super();
-	}
-
-	override public function create()
+	override function create()
 	{
 		super.create();
 		FlxG.sound.playMusic(Paths.music('BobWarningScreen'), 1);
@@ -23,11 +18,11 @@ class WarningState extends FlxState
 		add(thx);
 	}
 
-	public override function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
-		if (FlxG.keys.justPressed.ENTER)
+		if (controls.ACCEPT)
 		{
-			FlxG.switchState(new TitleState());
+			FlxG.switchState(new ThankYouState());
 		}
 		super.update(elapsed);
 	}

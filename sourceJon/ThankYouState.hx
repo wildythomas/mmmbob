@@ -7,25 +7,23 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.app.Application;
 
-class OutdatedSubState extends MusicBeatState
+class ThankYouState extends MusicBeatState
 {
-	public static var leftState:Bool = false;
-
-	public static var needVer:String = "IDFK LOL";
-
 	override function create()
 	{
 		super.create();
 		var thx:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bob/thankers', 'shared'));
 		add(thx);
 		FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
+
+		FlxG.sound.music.stop();
+		FlxG.sound.playMusic(Paths.music('freakyMenu'));
 	}
 
 	override function update(elapsed:Float)
 	{
 		if (controls.ACCEPT)
 		{
-			leftState = true;
 			FlxG.switchState(new MainMenuState());
 		}
 		super.update(elapsed);
