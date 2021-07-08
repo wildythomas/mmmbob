@@ -295,7 +295,7 @@ class MainMenuState extends MusicBeatState
 			{
 				secretmusic = new FlxSound().loadEmbedded(Paths.sound('crazy_little_guy'));
 				secretmusic.looped = true;
-				secretmusic.volume = 0.3;
+				secretmusic.volume = 0.5;
 				secretguy = new FlxSprite(0, 0);
 				secretguy.frames = Paths.getSparrowAtlas('campaign_menu_UI_characters');
 				secretguy.animation.addByPrefix('idle', 'BOBBY BOBINO BOBBLE menu asset', 60);
