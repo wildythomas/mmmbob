@@ -7,12 +7,8 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.app.Application;
 
-class OutdatedSubState extends MusicBeatState
+class ThankYouState extends MusicBeatState
 {
-	public static var leftState:Bool = false;
-
-	public static var needVer:String = "IDFK LOL";
-
 	override function create()
 	{
 		super.create();
@@ -25,7 +21,6 @@ class OutdatedSubState extends MusicBeatState
 	{
 		if (controls.ACCEPT)
 		{
-			leftState = true;
 			FlxG.switchState(new MainMenuState());
 		}
 		super.update(elapsed);
