@@ -3983,6 +3983,18 @@ class PlayState extends MusicBeatState
 		{
 			changeDadCharacter('little-man');
 		}
+		if (curSong.toLowerCase() == 'little-man' && curBeat == 1844 )
+		{
+			changeDadCharacter('tankman');
+			dad.x -= 124;
+			dad.y -= 644;
+			dad.y += 268;
+			dad.x -= 27;
+		}
+		if (curSong.toLowerCase() == 'little-man' && curBeat == 1900 )
+		{
+			spotifyad();
+		}
 		if (curSong.toLowerCase() == 'trouble' && curBeat == 504 )
 		{
 			BobIngameTransform();
@@ -4075,6 +4087,18 @@ class PlayState extends MusicBeatState
 		});
 
 	}
+	function spotifyad()
+		{
+			var thx:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('littleman/spotifyad'));
+			thx.updateHitbox();
+			thx.scrollFactor.set(0, 0);
+			thx.antialiasing = true;
+			FlxG.camera.fade(FlxColor.BLACK, 1, false, function()
+			{
+				add(thx);
+				FlxG.camera.fade(FlxColor.BLACK, 1, true);
+			}, true);
+		}
 	function WindowGoBack()
 		{
 			new FlxTimer().start(0.01, function(tmr:FlxTimer)

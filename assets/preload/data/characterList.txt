@@ -22,4 +22,3 @@ ron
 glitched-bob
 gloop-bob
 little-man
-pizza
