@@ -16,10 +16,12 @@ FNF Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgroun
 - [Paze](https://twitter.com/PazeTweets) - Programmed Discord Client
 - [SodaReishii](https://twitter.com/SodaReishii) - Extra BF "Scared" Portrait
 - [Cval](https://twitter.com/cval_brown) - Charting "Onslaught"
+- [CelShader](https://twitter.com/CelShayter) - can you draw her buying bread
 - [Zeexel32](https://twitter.com/Zeexel32) - Zeexel
 - [squidley](https://twitter.com/sqvidley) - Thumbnail Art / Charting Trouble
 - [riphasabrain](https://twitter.com/riphasabrain) - Also helped charting Trouble
 - [bbpanzu](https://twitter.com/bbsub3) and [angeld23](https://twitter.com/angeld23_) - Closed Bracket
+
 
 ### Friday Night Funkin'
  - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programming
