@@ -16,7 +16,7 @@ FNF Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgroun
 - [Paze](https://twitter.com/PazeTweets) - Programmed Discord Client
 - [SodaReishii](https://twitter.com/SodaReishii) - Extra BF "Scared" Portrait
 - [Cval](https://twitter.com/cval_brown) - Charting "Onslaught"
-- [CelShader](https://twitter.com/CelShayter) - can you draw her buying bread
+- [CelShader](https://twitter.com/CelShayter) - extra charting help
 - [Zeexel32](https://twitter.com/Zeexel32) - Zeexel
 - [squidley](https://twitter.com/sqvidley) - Thumbnail Art / Charting Trouble
 - [riphasabrain](https://twitter.com/riphasabrain) - Also helped charting Trouble
